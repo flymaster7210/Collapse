@@ -391,15 +391,16 @@ Please, before you say anything, this isn&#39;t AI slop, this wasn&#39;t vibe co
 [[Continue -&gt;Prologue-Title]]</tw-passagedata><tw-passagedata pid="9" name="Prologue-Title" tags="Chapter" position="100,1020" size="100,100">(text-colour:grey)[Prologue]
 A Solitary Dream: Shattered Beyond Repair
 (text-colour:grey)[孤独な夢――修復不可能なほどに砕け散った]
-[[Start -&gt;Prologue-Day1-1]]</tw-passagedata><tw-passagedata pid="10" name="Prologue-Day1-1" tags="" position="310,1020" size="100,100">??th Day, ??th Month, Year ????
+[[Start -&gt;Prologue-Day1-1]]</tw-passagedata><tw-passagedata pid="10" name="Prologue-Day1-1" tags="" position="310,1020" size="100,100">(set: $speaker to &quot;???&quot;)
+??th Day, ??th Month, Year ????
 ( Time has lost all meaning a long time ago...)
 The static hum of the atmosphere lingers in the air, cold and unchanging. Beyond the window, the sky remains a shade of dull, hollow grey.
-[[... -&gt;Prologue-1-2]]</tw-passagedata><tw-passagedata pid="11" name="Prologue-1-2" tags="" position="520,1020" size="100,100">(set: $speaker to &quot;???&quot;)
+[[... -&gt;Prologue-1-2]]</tw-passagedata><tw-passagedata pid="11" name="Prologue-1-2" tags="" position="520,1020" size="100,100">
 &quot; ß{19ˆ$@€ (§ÑH£Ñhrè™Î¹+‡ ÷þþ¨žA8 ×áz?Ïy4]ªî:uÖ^a¯õ®w‰mÛ¶iÏó¸òÊ+yë[ß ï¹ç qôèÑ &lt;òÈ#ß³,« Á“€â¿qi% ¾õå ü‡½×\óóF&quot;
 A voice breaks through the void, distorted and fragmenting like static cutting through a weak signal.
-[[What... did you.... say? -&gt;Prologue-1-3]]</tw-passagedata><tw-passagedata pid="12" name="Prologue-1-3" tags="" position="730,1020" size="100,100">(text-colour:grey)[???] &quot;Eto... The world... collapsed... F#¥DkE †(¥ ...is in... æ ëìèh àøñ... I&#39;m sorry... I didn&#39;t tell you... that I have been... J¥î¹ç¾ ¯™&gt;¿Î+€... but now... the time has come... the &#39;Prismatic Collision&#39;... claimed me...&quot;
+[[What... did you.... say? -&gt;Prologue-1-3]]</tw-passagedata><tw-passagedata pid="12" name="Prologue-1-3" tags="" position="725,1025" size="100,100"> &quot;Eto... The world... collapsed... F#¥DkE †(¥ ...is in... æ ëìèh àøñ... I&#39;m sorry... I didn&#39;t tell you... that I have been... J¥î¹ç¾ ¯™&gt;¿Î+€... but now... the time has come... the &#39;Prismatic Collision&#39;... claimed me...&quot;
 The figure before you trembles, their outline flickering as they slowly dissolve directly into wireframes.
-[[... -&gt;Prologue-1-4]]</tw-passagedata><tw-passagedata pid="13" name="Prologue-1-4" tags="" position="940,1020" size="100,100">(text-colour:grey)[???] &quot;I hope... we meet again in... ¥R‰JµŠa 8... It has been... a pleasure... but I&#39;ll wait... ±r3á §€ßü¦· H€ç¿þ‰—u ½ª ù... until... nSÐta“Àñ[ßð... Don&#39;t mourn my åjÏ÷YÎçi4...&quot;
+[[... -&gt;Prologue-1-4]]</tw-passagedata><tw-passagedata pid="13" name="Prologue-1-4" tags="" position="940,1020" size="100,100">&quot;I hope... we meet again in... ¥R‰JµŠa 8... It has been... a pleasure... but I&#39;ll wait... ±r3á §€ßü¦· H€ç¿þ‰—u ½ª ù... until... nSÐta“Àñ[ßð... Don&#39;t mourn my åjÏ÷YÎçi4...&quot;
 Their presence grows fainter with every passing heartbeat, slipping further into the fading light.
 [[Remain Silent -&gt;Prologue-1-5B]]
 [[Try to reach out -&gt;Prologue-1-5A]]</tw-passagedata><tw-passagedata pid="14" name="Prologue-1-5B" tags="" position="1150,945" size="100,100">(set: $speaker to &quot;&quot;)
@@ -712,15 +713,11 @@ You wander aimlessly through the grey streets, wondering what lies ahead in Heth
 [[... -&gt;Prologue-4-5C]]</tw-passagedata><tw-passagedata pid="204" name="Prologue-4-5C" tags="Outside" position="900,4600" size="100,100">(text-colour:grey)[Tianshi]
 Oh, so now you are complaining, you should have explained it better!
 [[... -&gt;Prologue-4-6C]]</tw-passagedata><tw-passagedata pid="205" name="Prologue-4-6C" tags="Outside" position="1100,4600" size="100,100">(text-colour:grey)[Swire]
-Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passagedata pid="206" name="Headers" tags="header" position="200,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
+Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passagedata pid="206" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
+  (enchant: ?Passage, (box: &quot;X&quot;) + (css: &quot;position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 900px; min-height: 180px; z-index: 100; background-image: url(&#39;scenario-covereffects_0.png&#39;), url(&#39;backing-scenario.png&#39;), url(&#39;scenario-dropbacking.png&#39;); background-size: 100% 100%, 100% 100%, 100% 100%; background-repeat: no-repeat; padding: 48px 40px 25px 55px; box-sizing: border-box; color: #1a1a1a; font-size: 1.15em; line-height: 1.5;&quot;))
   (if: $speaker is not &quot;&quot; and $speaker is not 0)[
-    &lt;div class=&quot;vn-dialogue-wrapper&quot;&gt;&lt;div class=&quot;vn-namebox&quot;&gt;$speaker&lt;/div&gt;&lt;div class=&quot;vn-textbox&quot;&gt;
-  ](else:)[
-    &lt;div class=&quot;vn-dialogue-wrapper&quot;&gt;&lt;div class=&quot;vn-textbox&quot;&gt;
+    &lt;div class=&quot;vn-namebox&quot; style=&quot;position: fixed; bottom: 196px; left: calc(50% - 450px); z-index: 101;&quot;&gt;$speaker&lt;/div&gt;
   ]
-]
-</tw-passagedata><tw-passagedata pid="207" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
-  &lt;/div&gt;&lt;/div&gt;
 ]
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
