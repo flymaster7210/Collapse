@@ -75,61 +75,6 @@ tw-story[tags~="Preamble"] {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* Main fixed container at the bottom of the screen */
-.vn-dialogue-wrapper {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 900px;
-  z-index: 100;
-}
-
-/* 1. Blue Nameplate Bar */
-.vn-namebox {
-  position: relative;
-  width: 320px;
-  height: 42px;
-  background-image: url('scenario-namebadge-mei.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  
-  display: flex;
-  align-items: center;
-  padding-left: 35px;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.1em;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: -4px;
-  z-index: 2;
-}
-
-/* 2. Stacked Grey Dialogue Box (Top to Bottom Layer Order) */
-.vn-textbox {
-  position: relative;
-  width: 100%;
-  min-height: 180px;
-  
-  /* Stacked from top layer (3rd white overlay) to bottom layer (4th grey base) */
-  background-image: 
-    url('scenario-covereffects_0.png'),
-    url('backing-scenario.png'),
-    url('scenario-dropbacking.png');
-  background-size: 100% 100%, 100% 100%, 100% 100%;
-  background-repeat: no-repeat;
-  
-  /* Keeps text out of the dark top bar and slanted bottom-left corner */
-  padding: 48px 40px 25px 55px; 
-  box-sizing: border-box;
-  color: #1a1a1a;
-  font-size: 1.15em;
-  line-height: 1.5;
-  z-index: 1;
-}
-
 /* Dialogue Box (applies to all passages except those tagged 'no-box') */
 tw-passage:not([tags~="no-box"]) {
   position: fixed !important;
@@ -137,7 +82,6 @@ tw-passage:not([tags~="no-box"]) {
   left: 50% !important;
   transform: translateX(-50%) !important;
   
-  /* Expands horizontally with text from 700px up to 94% of screen width */
   width: max-content !important;
   min-width: 700px !important;
   max-width: 94vw !important;
@@ -156,6 +100,11 @@ tw-passage:not([tags~="no-box"]) {
   font-size: 1.1em !important;
   line-height: 1.45 !important;
   z-index: 100 !important;
+}
+
+/* Lets .vn-namebox anchor to tw-passage instead of getting stuck at the bottom */
+tw-include[type="footer"] {
+  position: static !important;
 }
 
 /* Blue Nameplate anchored just above the top-left of tw-passage */
