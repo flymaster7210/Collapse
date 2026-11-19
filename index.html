@@ -38,7 +38,6 @@ p[style*="rgb(79, 15, 15)"] .enchantment-link:not(:hover) {
 }
 tw-story[tags~="Chapter"] {
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("world.png");
   background-size: cover;
   background-position: center;
@@ -67,7 +66,22 @@ tw-story[tags~="Prism-Outside"] {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Chapter" color="red"></tw-tag><tw-tag name="Prism-Outside" color="blue"></tw-tag><tw-tag name="Outside" color="orange"></tw-tag><tw-tag name="Introduction" color="purple"></tw-tag><tw-tag name="Prism-Touch" color="red"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="100,175" size="100,100">(set: $ReachedOut to false)
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.bgMusic = new Audio("003. Timeline (Dawn).mp3");
+window.bgMusic.loop = true;
+
+$(document).on(':passagedisplay', function() {
+  var tags = $('tw-story').attr('tags') || '';
+  if (tags.split(' ').includes('Preamble')) {
+    if (window.bgMusic.paused) {
+      window.bgMusic.play().catch(function() {});
+    }
+  } else {
+    window.bgMusic.pause();
+    window.bgMusic.currentTime = 0;
+  }
+});
+</script><tw-tag name="Chapter" color="red"></tw-tag><tw-tag name="Prism-Outside" color="blue"></tw-tag><tw-tag name="Outside" color="orange"></tw-tag><tw-tag name="Introduction" color="purple"></tw-tag><tw-tag name="Prism-Touch" color="red"></tw-tag><tw-tag name="Preamble" color="yellow"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="100,175" size="100,100">(set: $ReachedOut to false)
 (set: $TimesRefusedPrologue to 0)
 (set: $AllowEntryPromise to false)
 (set: $ReturnReason to &quot;&quot;)
@@ -76,12 +90,17 @@ tw-story[tags~="Prism-Outside"] {
 (set: $MetSwire to false)
 (set: $TouchedPrism to false)
 (set: $ExitReason to &quot;&quot;)
-(set: $Day3End to &quot;&quot;)</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="100,325" size="100,100">(text-colour:grey)[Content Warning]
+(set: $Day3End to &quot;&quot;)</tw-passagedata><tw-passagedata pid="2" name="Start" tags="Preamble" position="100,325" size="100,100">(text-colour:grey)[Content Warning]
 
 This narrative contains themes related to mental health, psychological distress, isolation, and symbolic representations of the aforementioned topics. Certain elements throughout this story are intentionally ambiguous or open to subjective interpretation. Events, character interactions, and visual symbolism are designed to evoke reflection rather than present a singular definitive meaning. Player discretion is strongly advised, as some topics may be emotionally resonant or unsettling for certain individuals. If you are a minor or currently experiencing severe distress, consulting with a trusted mentor, counselor, or parent before continuing is strongly encouraged. Please proceed at your own discretion.
 
 (text-colour:grey)[Player discretion is advised...]
-[[I understand -&gt;NotSlop]]</tw-passagedata><tw-passagedata pid="3" name="NotSlop" tags="" position="310,250" size="100,100">(text-colour:grey)[Technical &amp; AI Disclosure Statement]
+[[I understand -&gt;NotSlop]]</tw-passagedata><tw-passagedata pid="3" name="NotSlop" tags="Preamble" position="310,250" size="100,100">&lt;audio autoplay loop style=&quot;display: none;&quot;&gt;
+  &lt;source src=&quot;Credits1.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+
+(text-colour:grey)[Technical &amp; AI Disclosure Statement]
 
 This project was developed for MYP 4C Digital Thinking and incorporates generative AI technologies in direct compliance with the course syllabus and institutional guidelines.
 
@@ -96,7 +115,7 @@ While AI generation was a mandatory component of the development pipeline, the u
 Please, before you say anything, this isn&#39;t AI slop, this wasn&#39;t vibe coded or anything like that - Eto Aikyō ( And Gemini )
 
 [[I accept -&gt;Intro-P1]]
-[[It&#39;s still slop -&gt;CreditsSlop]]</tw-passagedata><tw-passagedata pid="4" name="CreditsSlop" tags="" position="520,175" size="100,100">&lt;!-- ========================================== --&gt;
+[[It&#39;s still slop -&gt;CreditsSlop]]</tw-passagedata><tw-passagedata pid="4" name="CreditsSlop" tags="Introduction" position="520,175" size="100,100">&lt;!-- ========================================== --&gt;
 &lt;!-- 1. AUDIO PLAYER --&gt;
 &lt;!-- ========================================== --&gt;
 &lt;audio autoplay loop style=&quot;display: none;&quot;&gt;
@@ -123,7 +142,7 @@ Please, before you say anything, this isn&#39;t AI slop, this wasn&#39;t vibe co
     &lt;p class=&quot;name&quot;&gt;Þü÷j÷êÒÿ K&#39;ûß Ë&lt;/p&gt;
     &lt;br&gt;
     &lt;p class=&quot;role&quot;&gt;Lead Project Manager&lt;/p&gt;
-    &lt;p class=&quot;name&quot;&gt;[ÇY;U&quot;žA@ËsÑk&lt;/p&gt;
+    &lt;p class=&quot;name&quot;&gt;ÇY;U&quot;žA@ËsÑk&lt;/p&gt;
     &lt;br&gt;
     &lt;p class=&quot;role&quot;&gt;------------------ Art -------------------------------&lt;/p&gt;
     &lt;p class=&quot;name&quot;&gt;---------------アート------------------------------&lt;/p&gt;
@@ -306,7 +325,6 @@ Please, before you say anything, this isn&#39;t AI slop, this wasn&#39;t vibe co
 [[... -&gt;Intro-P3]]</tw-passagedata><tw-passagedata pid="7" name="Intro-P3" tags="Introduction" position="950,250" size="100,100">The prismatic collision has completely ravaged the world. Its crystalline shards dissolved reality itself into hollow wireframes, leaving behind nothing but lifeless husks of people and places...
 [[... -&gt;Intro-P4]]</tw-passagedata><tw-passagedata pid="8" name="Intro-P4" tags="Introduction" position="1150,250" size="100,100">All that remains of life has been isolated into small, fragile settlements. Those who survive typically keep quiet, moving like ghosts through the grey mist, desperately trying to preserve a sense of normalcy in an ever-decaying terrain...
 [[Continue -&gt;Prologue-Title]]</tw-passagedata><tw-passagedata pid="9" name="Prologue-Title" tags="Chapter" position="100,1020" size="100,100">(text-colour:grey)[Prologue]
-Use code with caution.
 A Solitary Dream: Shattered Beyond Repair
 (text-colour:grey)[孤独な夢――修復不可能なほどに砕け散った]
 [[Start -&gt;Prologue-Day1-1]]</tw-passagedata><tw-passagedata pid="10" name="Prologue-Day1-1" tags="" position="310,1020" size="100,100">??th Day, ??th Month, Year ????
@@ -421,40 +439,40 @@ Nia looks visibly upset that you broke your promise, however she also looks like
 [[... -&gt;Prologue-2-9H]]</tw-passagedata><tw-passagedata pid="73" name="Prologue-2-9H" tags="" position="2200,2165" size="100,100">You offer Nia some comforting words before she leaves to attend some important matters, knowing well you also have to perform your duties as a civilian.
 [[... -&gt;Prologue-2-10]]</tw-passagedata><tw-passagedata pid="74" name="Prologue-2-7K" tags="" position="1360,2240" size="100,100">She bids farewell as she has important matters to attend to. You know she lied, but at what cost?
 [[... -&gt;Prologue-2-10]]</tw-passagedata><tw-passagedata pid="75" name="Prologue-2-5B" tags="" position="940,2615" size="100,100">(text-colour:white)[Eto] &quot;Nia, I haven&#39;t had any thoughts on voluntarily collapsing, and my resolve is strong.&quot;
-[[... -&gt;Prologue-2-6K]]</tw-passagedata><tw-passagedata pid="76" name="Prologue-2-10" tags="" position="2410,2165" size="100,100">As you venture out to perform your daily tasks, the oppressive quiet of Hetherau hangs heavily over the streets. Amidst the distant glimmering of unstable geometry, you spot someone standing alone, their posture erratic and strained. You catch yourself wondering if they are reaching their limit, if perhaps they simply need a human connection to anchor them before reality gives way completely.
+[[... -&gt;Prologue-2-6K]]</tw-passagedata><tw-passagedata pid="76" name="Prologue-2-10" tags="Outside" position="2410,2165" size="100,100">As you venture out to perform your daily tasks, the oppressive quiet of Hetherau hangs heavily over the streets. Amidst the distant glimmering of unstable geometry, you spot someone standing alone, their posture erratic and strained. You catch yourself wondering if they are reaching their limit, if perhaps they simply need a human connection to anchor them before reality gives way completely.
 [[Approach them -&gt;Prologue-2-11A]]
 [[Leave them be -&gt;Prologue-2-11B]]</tw-passagedata><tw-passagedata pid="77" name="Prologue-2-4E" tags="" position="730,2015" size="100,100">(text-colour:grey)[Nia] &quot;Thanks, Eto, I knew you would— I meant &#39;Your cooperation is valued, but please do not do any further actions that may impede me from completing my tasks.&#39;&quot;
 [[... -&gt;Prologue-2-5E]]</tw-passagedata><tw-passagedata pid="78" name="Prologue-2-5E" tags="" position="940,1865" size="100,100">Nia carries out her inspection dutifully and then leaves after bidding farewell as she has some important matters to attend to.
-[[... -&gt;Prologue-2-10]]</tw-passagedata><tw-passagedata pid="79" name="Prologue-2-11A" tags="" position="2620,2090" size="100,100">You step forward carefully, softening your gait so as not to startle them. Keeping your hands visible, you approach with a calm, gentle posture, hoping to signal safety and invite them to speak before their distress deepens.
-[[Ask them who they are -&gt;Prologue-2-12A]]</tw-passagedata><tw-passagedata pid="80" name="Prologue-2-11B" tags="" position="2620,2240" size="100,100">You ignore the other person, focusing only on what you have to do for today...
-[[... -&gt;Prologue-2-12B]]</tw-passagedata><tw-passagedata pid="81" name="Prologue-2-12A" tags="" position="2830,2090" size="100,100">(text-colour:grey)[Eto] &quot;Sorry to interrupt... My name is Eto. What&#39;s yours?&quot; You ask softly, trying to sound as grounded as possible.
-[[... -&gt;Prologue-2-13A]]</tw-passagedata><tw-passagedata pid="82" name="Prologue-2-13A" tags="" position="3460,2090" size="100,100">(text-colour:grey)[???] &quot;Greetings, I am ÀðH• ±3uçE1ö... &#39;Collapse&#39; progress is at ‰oD$&lt;è§z...&quot;
+[[... -&gt;Prologue-2-10]]</tw-passagedata><tw-passagedata pid="79" name="Prologue-2-11A" tags="Outside" position="2620,2090" size="100,100">You step forward carefully, softening your gait so as not to startle them. Keeping your hands visible, you approach with a calm, gentle posture, hoping to signal safety and invite them to speak before their distress deepens.
+[[Ask them who they are -&gt;Prologue-2-12A]]</tw-passagedata><tw-passagedata pid="80" name="Prologue-2-11B" tags="Outside" position="2620,2240" size="100,100">You ignore the other person, focusing only on what you have to do for today...
+[[... -&gt;Prologue-2-12B]]</tw-passagedata><tw-passagedata pid="81" name="Prologue-2-12A" tags="Outside" position="2830,2090" size="100,100">(text-colour:grey)[Eto] &quot;Sorry to interrupt... My name is Eto. What&#39;s yours?&quot; You ask softly, trying to sound as grounded as possible.
+[[... -&gt;Prologue-2-13A]]</tw-passagedata><tw-passagedata pid="82" name="Prologue-2-13A" tags="Outside" position="3460,2090" size="100,100">(text-colour:grey)[???] &quot;Greetings, I am ÀðH• ±3uçE1ö... &#39;Collapse&#39; progress is at ‰oD$&lt;è§z...&quot;
 The stranger&#39;s voice garbles mid-sentence, distorted by static and harsh artifacting as if the underlying stability of their identity is fracturing under intense structural stress.
-[[What? -&gt;Prologue-2-14A]]</tw-passagedata><tw-passagedata pid="83" name="Prologue-2-14A" tags="" position="3670,2165" size="100,100">(text-colour:grey)[Eto] &quot;I... I didn&#39;t quite catch that. What did you say again?&quot; You ask, taking a small step back, unnerved by the audio corruption in her voice.
-[[... -&gt;Prologue-2-15A]]</tw-passagedata><tw-passagedata pid="84" name="Prologue-2-15A" tags="" position="3880,2165" size="100,100">(text-colour:grey)[???] &quot;I meant to say... my name is Amiya. It&#39;s nice to meet you, Eto...&quot;
+[[What? -&gt;Prologue-2-14A]]</tw-passagedata><tw-passagedata pid="83" name="Prologue-2-14A" tags="Outside" position="3670,2165" size="100,100">(text-colour:grey)[Eto] &quot;I... I didn&#39;t quite catch that. What did you say again?&quot; You ask, taking a small step back, unnerved by the audio corruption in her voice.
+[[... -&gt;Prologue-2-15A]]</tw-passagedata><tw-passagedata pid="84" name="Prologue-2-15A" tags="Outside" position="3880,2165" size="100,100">(text-colour:grey)[???] &quot;I meant to say... my name is Amiya. It&#39;s nice to meet you, Eto...&quot;
 (set:$MetAmiya to true)
 Her tone stabilizes slightly, though a faint, unnerving tremor remains behind her words, hints of the static still lingering at the edges of her breath.
 [[Ask her about what she said before -&gt;Prologue-2-16A]]
-[[Sure... -&gt;Prologue-2-16C]]</tw-passagedata><tw-passagedata pid="85" name="Prologue-2-16A" tags="" position="4090,2165" size="100,100">(text-colour:grey)[Eto] &quot;Amiya, I&#39;m sure I heard something else... It sounded like the distorted static of someone undergoing Prismatic Collapse when they reach Stage 2...&quot;
-[[... -&gt;Prologue-2-17A]]</tw-passagedata><tw-passagedata pid="86" name="Prologue-2-16C" tags="" position="4510,2240" size="100,100">You choose to not pay much attention, just going to let the situation play out as it should...
-[[... -&gt;Prologue-2-17C]]</tw-passagedata><tw-passagedata pid="87" name="Prologue-2-17A" tags="" position="4300,2165" size="100,100">(text-colour:grey)[Amiya] &quot;No, no... I wasn&#39;t. It&#39;s just that I&#39;m really tired, and my speech gets terribly incoherent whenever I&#39;m exhausted...&quot; She forces a weak, reassuring smile, trying to brush it off.
+[[Sure... -&gt;Prologue-2-16C]]</tw-passagedata><tw-passagedata pid="85" name="Prologue-2-16A" tags="Outside" position="4090,2165" size="100,100">(text-colour:grey)[Eto] &quot;Amiya, I&#39;m sure I heard something else... It sounded like the distorted static of someone undergoing Prismatic Collapse when they reach Stage 2...&quot;
+[[... -&gt;Prologue-2-17A]]</tw-passagedata><tw-passagedata pid="86" name="Prologue-2-16C" tags="Outside" position="4510,2240" size="100,100">You choose to not pay much attention, just going to let the situation play out as it should...
+[[... -&gt;Prologue-2-17C]]</tw-passagedata><tw-passagedata pid="87" name="Prologue-2-17A" tags="Outside" position="4300,2165" size="100,100">(text-colour:grey)[Amiya] &quot;No, no... I wasn&#39;t. It&#39;s just that I&#39;m really tired, and my speech gets terribly incoherent whenever I&#39;m exhausted...&quot; She forces a weak, reassuring smile, trying to brush it off.
 [[Pressure her -&gt;Prologue-2-18A]]
-[[Sure... -&gt;Prologue-2-16C]]</tw-passagedata><tw-passagedata pid="88" name="Prologue-2-12B" tags="" position="2830,2240" size="100,100">For a few hours, everything seems to be going smoothly, nothing has really changed in your routine...
-[[... -&gt;Prologue-2-13B]]</tw-passagedata><tw-passagedata pid="89" name="Prologue-2-18A" tags="" position="4510,2090" size="100,100">(text-colour:grey)[Eto] &quot;Amiya, I know I heard something off. Trying to dismiss it like that only makes me more concerned...&quot;
-[[... -&gt;Prologue-2-19A]]</tw-passagedata><tw-passagedata pid="90" name="Prologue-2-13B" tags="" position="3040,2165" size="100,100">However, amidst the unchanging landscape, something catches your attention...
-[[... -&gt;Prologue-2-14B]]</tw-passagedata><tw-passagedata pid="91" name="Prologue-2-14B" tags="" position="3250,2165" size="100,100">You find the same person you just ignored, standing rigidly and looking at a nearby Prismatic Collision.
+[[Sure... -&gt;Prologue-2-16C]]</tw-passagedata><tw-passagedata pid="88" name="Prologue-2-12B" tags="Outside" position="2825,2250" size="100,100">For a few hours, everything seems to be going smoothly, nothing has really changed in your routine...
+[[... -&gt;Prologue-2-13B]]</tw-passagedata><tw-passagedata pid="89" name="Prologue-2-18A" tags="Outside" position="4500,2100" size="100,100">(text-colour:grey)[Eto] &quot;Amiya, I know I heard something off. Trying to dismiss it like that only makes me more concerned...&quot;
+[[... -&gt;Prologue-2-19A]]</tw-passagedata><tw-passagedata pid="90" name="Prologue-2-13B" tags="Outside" position="3040,2165" size="100,100">However, amidst the unchanging landscape, something catches your attention...
+[[... -&gt;Prologue-2-14B]]</tw-passagedata><tw-passagedata pid="91" name="Prologue-2-14B" tags="Outside" position="3250,2165" size="100,100">You find the same person you just ignored, standing rigidly and looking at a nearby Prismatic Collision.
 [[Go check on them -&gt;Prologue-2-13A]]
-[[Leave them be -&gt;Prologue-2-15B]]</tw-passagedata><tw-passagedata pid="92" name="Prologue-2-15B" tags="" position="3460,2240" size="100,100">You leave, barely overhearing a conversation that sounds like someone undergoing Prismatic Collapse is trying to talk to someone and pretending they are not...
-[[... -&gt;Prologue-2-16C]]</tw-passagedata><tw-passagedata pid="93" name="Prologue-2-17C" tags="" position="4720,2240" size="100,100">You consider it lightly, as the emotional wound of &quot;her&quot; collapse is still fresh in your mind.
-[[... -&gt;Prologue-2-21]]</tw-passagedata><tw-passagedata pid="94" name="Prologue-2-19A" tags="" position="4720,2090" size="100,100">(text-colour:grey)[Amiya] &quot;It&#39;s just that I ñu• £!• «@ŸªaïrSËµ• ‹™s‹ì&lt;È¥©‰)Ê• eìA÷• þx• e|õo,¤õ•• ;t• ×• ÈØ¼^B„é DÚÖ— I mean, it&#39;s really just fatigue! Nothing else... nothing unusual is happening to me...&quot;
+[[Leave them be -&gt;Prologue-2-15B]]</tw-passagedata><tw-passagedata pid="92" name="Prologue-2-15B" tags="Outside" position="3460,2240" size="100,100">You leave, barely overhearing a conversation that sounds like someone undergoing Prismatic Collapse is trying to talk to someone and pretending they are not...
+[[... -&gt;Prologue-2-16C]]</tw-passagedata><tw-passagedata pid="93" name="Prologue-2-17C" tags="Outside" position="4720,2240" size="100,100">You consider it lightly, as the emotional wound of &quot;her&quot; collapse is still fresh in your mind.
+[[... -&gt;Prologue-2-21]]</tw-passagedata><tw-passagedata pid="94" name="Prologue-2-19A" tags="Outside" position="4720,2090" size="100,100">(text-colour:grey)[Amiya] &quot;It&#39;s just that I ñu• £!• «@ŸªaïrSËµ• ‹™s‹ì&lt;È¥©‰)Ê• eìA÷• þx• e|õo,¤õ•• ;t• ×• ÈØ¼^B„é DÚÖ— I mean, it&#39;s really just fatigue! Nothing else... nothing unusual is happening to me...&quot;
 Her voice glitches violently under the strain, digital noise tearing through her words before she desperately pulls her composure back together.
-[[Sure... -&gt;Prologue-2-20A]]</tw-passagedata><tw-passagedata pid="95" name="Prologue-2-20A" tags="" position="4930,2165" size="100,100">You decide not to push her any further. It is abundantly clear that tense confrontation or heightened emotional stress only accelerates her instability, causing her voice and form to fracture even faster.
-[[... -&gt;Prologue-2-21]]</tw-passagedata><tw-passagedata pid="96" name="Prologue-2-21" tags="" position="5140,2165" size="100,100">You leave the area and continue your tasks, going all the way until it&#39;s late, where you have to return to your residence...
-[[... -&gt;Prologue-2-22]]</tw-passagedata><tw-passagedata pid="97" name="Prologue-2-22" tags="" position="5350,2165" size="100,100">(if: $MetAmiya is true)[As you walk down the street, feeling a brief sense of normalcy you haven&#39;t experienced since the Prismatic Collision began, a conversation nearby piques your attention. Though you can&#39;t quite hear the details, you instantly recognize the voice as Amiya&#39;s... [[Go check what is going on -&gt;Prologue-2-23A]] [[Let it be -&gt;Prologue-2-23B]]]
-(else:)[As you walk down the street, feeling a brief sense of normalcy you haven&#39;t experienced since the Prismatic Collision began, a conversation nearby piques your attention. Though you can&#39;t quite hear the details, you recognize the speaker from earlier, even if you don&#39;t know her name because you didn&#39;t have the courage to ask her... [[Go check what is going on -&gt;Prologue-2-23A]] [[Let it be -&gt;Prologue-2-23B]]]</tw-passagedata><tw-passagedata pid="98" name="Prologue-2-23A" tags="" position="5560,2090" size="100,100">You slowly draw closer, keeping a watchful eye on the crowd. A surprisingly large group has gathered around Amiya, and you can&#39;t help but wonder what could possibly draw so many people together in a place like Hetherau...
-[[... -&gt;Prologue-2-24A]]</tw-passagedata><tw-passagedata pid="99" name="Prologue-2-23B" tags="" position="5560,2240" size="100,100">You carefully considered the alternatives and decided not to interfere, as it seems like it might be something important...
+[[Sure... -&gt;Prologue-2-20A]]</tw-passagedata><tw-passagedata pid="95" name="Prologue-2-20A" tags="Outside" position="4925,2175" size="100,100">You decide not to push her any further. It is abundantly clear that tense confrontation or heightened emotional stress only accelerates her instability, causing her voice and form to fracture even faster.
+[[... -&gt;Prologue-2-21]]</tw-passagedata><tw-passagedata pid="96" name="Prologue-2-21" tags="Outside" position="5140,2165" size="100,100">You leave the area and continue your tasks, going all the way until it&#39;s late, where you have to return to your residence...
+[[... -&gt;Prologue-2-22]]</tw-passagedata><tw-passagedata pid="97" name="Prologue-2-22" tags="Outside" position="5350,2165" size="100,100">(if: $MetAmiya is true)[As you walk down the street, feeling a brief sense of normalcy you haven&#39;t experienced since the Prismatic Collision began, a conversation nearby piques your attention. Though you can&#39;t quite hear the details, you instantly recognize the voice as Amiya&#39;s... [[Go check what is going on -&gt;Prologue-2-23A]] [[Let it be -&gt;Prologue-2-23B]]]
+(else:)[As you walk down the street, feeling a brief sense of normalcy you haven&#39;t experienced since the Prismatic Collision began, a conversation nearby piques your attention. Though you can&#39;t quite hear the details, you recognize the speaker from earlier, even if you don&#39;t know her name because you didn&#39;t have the courage to ask her... [[Go check what is going on -&gt;Prologue-2-23A]] [[Let it be -&gt;Prologue-2-23B]]]</tw-passagedata><tw-passagedata pid="98" name="Prologue-2-23A" tags="Outside" position="5560,2090" size="100,100">You slowly draw closer, keeping a watchful eye on the crowd. A surprisingly large group has gathered around Amiya, and you can&#39;t help but wonder what could possibly draw so many people together in a place like Hetherau...
+[[... -&gt;Prologue-2-24A]]</tw-passagedata><tw-passagedata pid="99" name="Prologue-2-23B" tags="Outside" position="5560,2240" size="100,100">You carefully considered the alternatives and decided not to interfere, as it seems like it might be something important...
 (set:$MetSwire to false)
-[[... -&gt;Prologue-2-25B]]</tw-passagedata><tw-passagedata pid="100" name="Prologue-2-24A" tags="" position="5770,2165" size="100,100">(if: $MetAmiya is true)[
+[[... -&gt;Prologue-2-25B]]</tw-passagedata><tw-passagedata pid="100" name="Prologue-2-24A" tags="Outside" position="5770,2165" size="100,100">(if: $MetAmiya is true)[
 (text-colour:grey)[???] &quot;Amiya, I know you&#39;re holding onto hope with this idea of yours, but are you sure it&#39;s wise? Your Prismatic Collapse only seems to be getting worse...&quot;
 [[Leave the discussion -&gt;Prologue-2-25B]]
 [[Ask about Amiya&#39;s idea -&gt;Prologue-2-25C]]
@@ -464,19 +482,19 @@ Her voice glitches violently under the strain, digital noise tearing through her
 (text-colour:grey)[???] &quot;Amiya, I know you&#39;re holding onto hope with this idea of yours, but are you sure it&#39;s wise? Your Prismatic Collapse only seems to be getting worse...&quot;
 [[Leave the discussion -&gt;Prologue-2-25B]]
 [[Ask about Amiya&#39;s idea -&gt;Prologue-2-25C]]
-]</tw-passagedata><tw-passagedata pid="101" name="Prologue-2-25C" tags="" position="5980,2015" size="100,100">(text-colour:grey)[Eto] &quot;Excuse me... Could I get your name? And if you don&#39;t mind me asking, what exactly is Amiya planning to do, and why?&quot;
-[[... -&gt;Prologue-2-26C]]</tw-passagedata><tw-passagedata pid="102" name="Prologue-2-25A" tags="" position="5980,2315" size="100,100">(text-colour:grey)[Eto] &quot;Hello, Amiya, why are you surrounded by so many people tonight?&quot;
+]</tw-passagedata><tw-passagedata pid="101" name="Prologue-2-25C" tags="Outside" position="5980,2015" size="100,100">(text-colour:grey)[Eto] &quot;Excuse me... Could I get your name? And if you don&#39;t mind me asking, what exactly is Amiya planning to do, and why?&quot;
+[[... -&gt;Prologue-2-26C]]</tw-passagedata><tw-passagedata pid="102" name="Prologue-2-25A" tags="Outside" position="5980,2315" size="100,100">(text-colour:grey)[Eto] &quot;Hello, Amiya, why are you surrounded by so many people tonight?&quot;
 (set:$MetSwire to false)
-[[... -&gt;Prologue-2-26A]]</tw-passagedata><tw-passagedata pid="103" name="Prologue-2-26C" tags="" position="6190,2015" size="100,100">(set:$MetSwire to true)
+[[... -&gt;Prologue-2-26A]]</tw-passagedata><tw-passagedata pid="103" name="Prologue-2-26C" tags="Outside" position="6190,2015" size="100,100">(set:$MetSwire to true)
 (text-colour:grey)[???] &quot;Me? My family name is Swire—spelled S-c-h-w-i-r-e, though everyone pronounces it Swire around here. And no, I&#39;m not giving you my first name considering you haven&#39;t offered yours either.&quot; She crosses her arms, giving you a sharp look before continuing. &quot;As for your other question: what Miss Amiya is trying to do is spread her vision of &#39;a better future.&#39;&quot;
-[[Huh? -&gt;Prologue-2-27C]]</tw-passagedata><tw-passagedata pid="104" name="Prologue-2-25B" tags="" position="5980,2165" size="100,100">You leave the area wondering if you should maybe listen, but you tell yourself that it isn&#39;t your business.
-[[... -&gt;Prologue-2-26B]]</tw-passagedata><tw-passagedata pid="105" name="Prologue-2-27C" tags="" position="6400,2090" size="100,100">(text-colour:grey)[Eto] &quot;&#39;A better future&#39;? What is that supposed to mean in a place like this?&quot;
-[[... -&gt;Prologue-2-28C]]</tw-passagedata><tw-passagedata pid="106" name="Prologue-2-28C" tags="" position="6610,2090" size="100,100">(text-colour:grey)[Swire] &quot;Simply put, Amiya has a wish. Nothing grand or impossible—just a quiet, persistent hope for a better Hetherau. The people gathered here share that same wish, and they came to hear what she has to say.&quot;
-[[Ask her about Amiya&#39;s plan -&gt;Prologue-2-29C]]</tw-passagedata><tw-passagedata pid="107" name="Prologue-2-29C" tags="" position="6820,2165" size="100,100">(text-colour:grey)[Eto] &quot;Swire... how does she actually plan on doing that? Does she have a concrete strategy, or is it just an idea?&quot;
-[[... -&gt;Prologue-2-30C]]</tw-passagedata><tw-passagedata pid="108" name="Prologue-2-30C" tags="" position="7030,2165" size="100,100">(text-colour:grey)[Swire] &quot;Look at you... so baffled when the core plan is surprisingly straightforward.&quot; Swire smirks slightly, leaning against a weathered railing. &quot;Most people just call this district &#39;Hetherau,&#39; but its full designation is &#39;The Citizens&#39; Settlement of Hetherau.&#39; That means local charter laws technically allow for civic elections. However, there haven&#39;t been any registered candidates in years, so no one ever votes due to a complete lack of opposing parties...&quot;
-[[And... -&gt;Prologue-2-31C]]</tw-passagedata><tw-passagedata pid="109" name="Prologue-2-31C" tags="" position="7240,2165" size="100,100">(text-colour:grey)[Swire] &quot;So the plan is straightforward: Amiya gets her message across, hopefully wins the election, and then we can all work together to change things...&quot;
-[[Sure... -&gt;Prologue-2-32C]]</tw-passagedata><tw-passagedata pid="110" name="Prologue-2-32C" tags="" position="7450,2165" size="100,100">You tell Miss Swire that the idea sounds somewhat naive given the state of Hetherau. Before the conversation can drag on, you excuse yourself as it&#39;s already late, and you still need to rest for when you wake up tomorrow... assuming you do.
-[[... -&gt;Prologue-2-33C]]</tw-passagedata><tw-passagedata pid="111" name="Prologue-2-33C" tags="" position="7660,2165" size="100,100">As you walk back home through the quiet streets, a small, quiet smile slips across your face. Swire&#39;s guarded, sharp demeanor reminded you remarkably of Nia, except Swire carries a lively, stubborn spark that Nia buried long ago under layers of protocol.
+[[Huh? -&gt;Prologue-2-27C]]</tw-passagedata><tw-passagedata pid="104" name="Prologue-2-25B" tags="Outside" position="5980,2165" size="100,100">You leave the area wondering if you should maybe listen, but you tell yourself that it isn&#39;t your business.
+[[... -&gt;Prologue-2-26B]]</tw-passagedata><tw-passagedata pid="105" name="Prologue-2-27C" tags="Outside" position="6400,2090" size="100,100">(text-colour:grey)[Eto] &quot;&#39;A better future&#39;? What is that supposed to mean in a place like this?&quot;
+[[... -&gt;Prologue-2-28C]]</tw-passagedata><tw-passagedata pid="106" name="Prologue-2-28C" tags="Outside" position="6610,2090" size="100,100">(text-colour:grey)[Swire] &quot;Simply put, Amiya has a wish. Nothing grand or impossible—just a quiet, persistent hope for a better Hetherau. The people gathered here share that same wish, and they came to hear what she has to say.&quot;
+[[Ask her about Amiya&#39;s plan -&gt;Prologue-2-29C]]</tw-passagedata><tw-passagedata pid="107" name="Prologue-2-29C" tags="Outside" position="6820,2165" size="100,100">(text-colour:grey)[Eto] &quot;Swire... how does she actually plan on doing that? Does she have a concrete strategy, or is it just an idea?&quot;
+[[... -&gt;Prologue-2-30C]]</tw-passagedata><tw-passagedata pid="108" name="Prologue-2-30C" tags="Outside" position="7030,2165" size="100,100">(text-colour:grey)[Swire] &quot;Look at you... so baffled when the core plan is surprisingly straightforward.&quot; Swire smirks slightly, leaning against a weathered railing. &quot;Most people just call this district &#39;Hetherau,&#39; but its full designation is &#39;The Citizens&#39; Settlement of Hetherau.&#39; That means local charter laws technically allow for civic elections. However, there haven&#39;t been any registered candidates in years, so no one ever votes due to a complete lack of opposing parties...&quot;
+[[And... -&gt;Prologue-2-31C]]</tw-passagedata><tw-passagedata pid="109" name="Prologue-2-31C" tags="Outside" position="7240,2165" size="100,100">(text-colour:grey)[Swire] &quot;So the plan is straightforward: Amiya gets her message across, hopefully wins the election, and then we can all work together to change things...&quot;
+[[Sure... -&gt;Prologue-2-32C]]</tw-passagedata><tw-passagedata pid="110" name="Prologue-2-32C" tags="Outside" position="7450,2165" size="100,100">You tell Miss Swire that the idea sounds somewhat naive given the state of Hetherau. Before the conversation can drag on, you excuse yourself as it&#39;s already late, and you still need to rest for when you wake up tomorrow... assuming you do.
+[[... -&gt;Prologue-2-33C]]</tw-passagedata><tw-passagedata pid="111" name="Prologue-2-33C" tags="Outside" position="7660,2165" size="100,100">As you walk back home through the quiet streets, a small, quiet smile slips across your face. Swire&#39;s guarded, sharp demeanor reminded you remarkably of Nia, except Swire carries a lively, stubborn spark that Nia buried long ago under layers of protocol.
 [[... -&gt;Prologue-2-34]]</tw-passagedata><tw-passagedata pid="112" name="Prologue-2-34" tags="" position="7870,2165" size="100,100">(if: $DaysWaitedPrologue &lt; 2)[You walk back to your apartment, hoping you get no more interruptions as it&#39;s already late... [[End day -&gt;Prologue-Day3-1]]]
 (else:)[You walk back to your apartment, hoping you get no more interruptions as it&#39;s already late... [[End day? -&gt;Prologue-2-35B]]]</tw-passagedata><tw-passagedata pid="113" name="Prologue-2-35B" tags="" position="8080,2165" size="100,100">You almost fall asleep, but after a while, there is a knock at the door.
 [[Dismiss it -&gt;Prologue-2-36B]]
@@ -488,10 +506,10 @@ Her voice glitches violently under the strain, digital noise tearing through her
 [[... -&gt;Prologue-2-38E]]</tw-passagedata><tw-passagedata pid="118" name="Prologue-2-38D" tags="" position="8710,2090" size="100,100">(text-colour:grey)[Nia] &quot;Civilian Eto, your compliance is noted. Thank you for allowing me access.&quot; Nia says that, then quickly does her task to let you rest for the remainder of this time.
 [[End day -&gt;Prologue-Day3-1]]</tw-passagedata><tw-passagedata pid="119" name="Prologue-2-38E" tags="" position="8710,2240" size="100,100">(text-colour:grey)[Nia] &quot;Your lack of compliance has been noted.&quot;
 (set:$DaysWaitedPrologue to it + 0.5)
-[[End day -&gt;Prologue-Day3-1]]</tw-passagedata><tw-passagedata pid="120" name="Prologue-2-26B" tags="" position="6190,2165" size="100,100">You wander down the street, passing by the same places as always other than some slight detours due to Prismatic Collisions that weren&#39;t there before...
-[[... -&gt;Prologue-2-34]]</tw-passagedata><tw-passagedata pid="121" name="Prologue-2-26A" tags="" position="6190,2315" size="100,100">(text-colour:grey)[Amiya] &quot;Eto... I haven&#39;t told you, but I have a wish... a really mellow one... what I envision is... a better Hetherau for all of us...&quot;
-[[... -&gt;Prologue-2-27A]]</tw-passagedata><tw-passagedata pid="122" name="Prologue-2-27A" tags="" position="6400,2240" size="100,100">(text-colour:grey)[Amiya] &quot;And these people... we are all united by that hope... one which we refuse to lose, even when times want us to quit...&quot;
-[[Sure... -&gt;Prologue-2-28A]]</tw-passagedata><tw-passagedata pid="123" name="Prologue-2-28A" tags="" position="6610,2240" size="100,100">You bid farewell to Amiya, letting her continue her seemingly important matters...
+[[End day -&gt;Prologue-Day3-1]]</tw-passagedata><tw-passagedata pid="120" name="Prologue-2-26B" tags="Outside" position="6190,2165" size="100,100">You wander down the street, passing by the same places as always other than some slight detours due to Prismatic Collisions that weren&#39;t there before...
+[[... -&gt;Prologue-2-34]]</tw-passagedata><tw-passagedata pid="121" name="Prologue-2-26A" tags="Outside" position="6190,2315" size="100,100">(text-colour:grey)[Amiya] &quot;Eto... I haven&#39;t told you, but I have a wish... a really mellow one... what I envision is... a better Hetherau for all of us...&quot;
+[[... -&gt;Prologue-2-27A]]</tw-passagedata><tw-passagedata pid="122" name="Prologue-2-27A" tags="Outside" position="6400,2240" size="100,100">(text-colour:grey)[Amiya] &quot;And these people... we are all united by that hope... one which we refuse to lose, even when times want us to quit...&quot;
+[[Sure... -&gt;Prologue-2-28A]]</tw-passagedata><tw-passagedata pid="123" name="Prologue-2-28A" tags="Outside" position="6610,2240" size="100,100">You bid farewell to Amiya, letting her continue her seemingly important matters...
 [[... -&gt;Prologue-2-34]]</tw-passagedata><tw-passagedata pid="124" name="Prologue-Day3-1" tags="" position="100,3460" size="100,100">??th Day, ??th Month, Year ????
 ( What matters is that you woke up...)
 Today you don&#39;t have to work as it&#39;s a rest day, so it&#39;s time to begin carrying out your errands...
@@ -504,21 +522,21 @@ Today you don&#39;t have to work as it&#39;s a rest day, so it&#39;s time to beg
 [[Get away from it -&gt;Prologue-3-5C]]</tw-passagedata><tw-passagedata pid="129" name="Prologue-3-5A" tags="Prism-Touch" position="1360,3385" size="100,100">You reach out for the prism, feeling its cold edges and hoping you will be able to hold on to begin your journey to reunite with &quot;her.&quot; However, you hear someone approaching before you feel someone pulling you by the waist...
 (set:$TouchedPrism to true)
 [[... -&gt;Prologue-3-6A]]</tw-passagedata><tw-passagedata pid="130" name="Prologue-3-4B" tags="" position="730,3385" size="100,100">You let Nia in, letting her carry out her inspection before she leaves, and so do you...
-[[... -&gt;Prologue-3-3A]]</tw-passagedata><tw-passagedata pid="131" name="Prologue-3-6A" tags="" position="1550,3375" size="100,100">(text-colour:grey)[Nia] &quot;Eto! What were you thinking!— I meant, &#39;Civilians are instructed to avoid physical contact with Prismatic Collisions.&#39;&quot;
+[[... -&gt;Prologue-3-3A]]</tw-passagedata><tw-passagedata pid="131" name="Prologue-3-6A" tags="Prism-Outside" position="1550,3375" size="100,100">(text-colour:grey)[Nia] &quot;Eto! What were you thinking!— I meant, &#39;Civilians are instructed to avoid physical contact with Prismatic Collisions.&#39;&quot;
 [[Accept her orders -&gt;Prologue-3-7A]]
 [[Explain your actions -&gt;Prologue-3-7D]]
-[[Keep trying to touch it for longer -&gt;Prologue-3-7F]]</tw-passagedata><tw-passagedata pid="132" name="Prologue-3-7A" tags="" position="1780,3235" size="100,100">You stop resisting and walk away as she instructed, however you know you already made an irreversible choice...
-[[... -&gt;Prologue-3-8A]]</tw-passagedata><tw-passagedata pid="133" name="Prologue-3-7D" tags="" position="1780,3535" size="100,100">(if: $ReachedOut is true)[You tell Nia that you had to do it because of &quot;her&quot; promise and how you tried reaching out, yet watched her fade as you helplessly tried holding &quot;her&quot; hand one last time... [[... -&gt;Prologue-3-8D]]]
-(else:)[You tell Nia that you had to do it because of &quot;her&quot; promise and how you tried holding back your feelings and remaining still as &quot;she&quot; went to &quot;that place&quot;... [[...-&gt;Prologue-3-8D]]]</tw-passagedata><tw-passagedata pid="134" name="Prologue-3-7F" tags="" position="1780,3385" size="100,100">You wrestle Nia&#39;s grip, trying to touch the prism, yet she manages to pull you away from it.
-[[... -&gt;Prologue-3-9D]]</tw-passagedata><tw-passagedata pid="135" name="Prologue-3-5C" tags="Outside" position="1360,3535" size="100,100">You get away from the Prismatic Collision, trying to find another way through...
+[[Keep trying to touch it for longer -&gt;Prologue-3-7F]]</tw-passagedata><tw-passagedata pid="132" name="Prologue-3-7A" tags="Prism-Outside" position="1780,3235" size="100,100">You stop resisting and walk away as she instructed, however you know you already made an irreversible choice...
+[[... -&gt;Prologue-3-8A]]</tw-passagedata><tw-passagedata pid="133" name="Prologue-3-7D" tags="Prism-Outside" position="1780,3535" size="100,100">(if: $ReachedOut is true)[You tell Nia that you had to do it because of &quot;her&quot; promise and how you tried reaching out, yet watched her fade as you helplessly tried holding &quot;her&quot; hand one last time... [[... -&gt;Prologue-3-8D]]]
+(else:)[You tell Nia that you had to do it because of &quot;her&quot; promise and how you tried holding back your feelings and remaining still as &quot;she&quot; went to &quot;that place&quot;... [[...-&gt;Prologue-3-8D]]]</tw-passagedata><tw-passagedata pid="134" name="Prologue-3-7F" tags="Prism-Outside" position="1780,3385" size="100,100">You wrestle Nia&#39;s grip, trying to touch the prism, yet she manages to pull you away from it.
+[[... -&gt;Prologue-3-9D]]</tw-passagedata><tw-passagedata pid="135" name="Prologue-3-5C" tags="Prism-Outside" position="1360,3535" size="100,100">You get away from the Prismatic Collision, trying to find another way through...
 [[... -&gt;Prologue-3-6C]]</tw-passagedata><tw-passagedata pid="136" name="Prologue-3-4G" tags="" position="730,3535" size="100,100">You leave your home, forgetting Nia is there, refusing her entry.
 (set:$DaysWaitedPrologue to it + 0.5)
 [[... -&gt;Prologue-3-3A]]</tw-passagedata><tw-passagedata pid="137" name="Prologue-3-6C" tags="Outside" position="1570,3535" size="100,100">You make your way to get food when a loud sound makes you look behind you...
-[[... -&gt;Prologue-3-7C]]</tw-passagedata><tw-passagedata pid="138" name="Prologue-3-8D" tags="" position="1990,3310" size="100,100">(text-colour:grey)[Nia] &quot;Eto... you should have said so before... however, I still do not approve or endorse your actions as they are strictly advised against.&quot;
-[[... -&gt;Prologue-3-9D]]</tw-passagedata><tw-passagedata pid="139" name="Prologue-3-9D" tags="" position="2200,3310" size="100,100">(text-colour:grey)[???] &quot;You! What is your problem! Let the man live his life—if he wants to begin voluntary collapse, then let him!&quot; someone interrupts your small exchange with Nia.
-[[What? -&gt;Prologue-3-10D]]</tw-passagedata><tw-passagedata pid="140" name="Prologue-3-10D" tags="" position="2410,3385" size="100,100">(text-colour:grey)[Eto] &quot;What? I don&#39;t understand what is going on?&quot;
-[[... -&gt;Prologue-3-11D]]</tw-passagedata><tw-passagedata pid="141" name="Prologue-3-11D" tags="" position="2620,3460" size="100,100">The person approaches you in a somewhat hostile way, first yelling at Nia and telling her it&#39;s none of her business to be restraining others from seeking &quot;Reunion&quot; before turning to face you.
-[[Who are you? -&gt;Prologue-3-12D]]</tw-passagedata><tw-passagedata pid="142" name="Prologue-3-12D" tags="" position="2830,3460" size="100,100">(if: $MetSwire is true)[
+[[... -&gt;Prologue-3-7C]]</tw-passagedata><tw-passagedata pid="138" name="Prologue-3-8D" tags="Prism-Outside" position="1990,3310" size="100,100">(text-colour:grey)[Nia] &quot;Eto... you should have said so before... however, I still do not approve or endorse your actions as they are strictly advised against.&quot;
+[[... -&gt;Prologue-3-9D]]</tw-passagedata><tw-passagedata pid="139" name="Prologue-3-9D" tags="Outside" position="2200,3310" size="100,100">(text-colour:grey)[???] &quot;You! What is your problem! Let the man live his life—if he wants to begin voluntary collapse, then let him!&quot; someone interrupts your small exchange with Nia.
+[[What? -&gt;Prologue-3-10D]]</tw-passagedata><tw-passagedata pid="140" name="Prologue-3-10D" tags="Outside" position="2410,3385" size="100,100">(text-colour:grey)[Eto] &quot;What? I don&#39;t understand what is going on?&quot;
+[[... -&gt;Prologue-3-11D]]</tw-passagedata><tw-passagedata pid="141" name="Prologue-3-11D" tags="Outside" position="2620,3460" size="100,100">The person approaches you in a somewhat hostile way, first yelling at Nia and telling her it&#39;s none of her business to be restraining others from seeking &quot;Reunion&quot; before turning to face you.
+[[Who are you? -&gt;Prologue-3-12D]]</tw-passagedata><tw-passagedata pid="142" name="Prologue-3-12D" tags="Outside" position="2830,3460" size="100,100">(if: $MetSwire is true)[
 (text-colour:grey)[???] &quot;Codename Tianshi, member of &#39;Reunion&#39; and also acquaintance with Swire in her project.&quot;
 [[I know her... -&gt;Prologue-3-13D]]
 ]
@@ -527,7 +545,7 @@ Today you don&#39;t have to work as it&#39;s a rest day, so it&#39;s time to beg
 [[Doesn&#39;t ring a bell... -&gt;Prologue-3-13E]]
 ]</tw-passagedata><tw-passagedata pid="143" name="Prologue-3-13D" tags="" position="3040,3385" size="100,100">(text-colour:grey)[Eto] &quot;Tianshi, let&#39;s back up for a second. What is &#39;Reunion&#39; and what has it to do with Swire?&quot;
 [[... -&gt;Prologue-3-14D]]</tw-passagedata><tw-passagedata pid="144" name="Prologue-3-13E" tags="" position="3040,3535" size="100,100">(text-colour:grey)[Eto] &quot;No clue who that is.&quot;
-[[... -&gt;Prologue-3-14E]]</tw-passagedata><tw-passagedata pid="145" name="Prologue-3-8A" tags="" position="1990,3160" size="100,100">You prepare to walk away, talking some vague platitudes with Nia before you hear the sound of someone screaming.
+[[... -&gt;Prologue-3-14E]]</tw-passagedata><tw-passagedata pid="145" name="Prologue-3-8A" tags="Prism-Outside" position="1990,3160" size="100,100">You prepare to walk away, talking some vague platitudes with Nia before you hear the sound of someone screaming.
 [[... -&gt;Prologue-3-9D]]</tw-passagedata><tw-passagedata pid="146" name="Prologue-3-14D" tags="" position="3250,3385" size="100,100">(text-colour:grey)[Tianshi] &quot;Well, a lot. The thing is that she was the one who conceived Reunion as an idea, and is technically the acting director...&quot;
 [[... -&gt;Prologue-3-15TS]]</tw-passagedata><tw-passagedata pid="147" name="Prologue-3-14E" tags="" position="3250,3535" size="100,100">(if: $MetAmiya is true)[
 (text-colour:grey)[Tianshi] &quot;Maybe you are familiar with Amiya? She&#39;s more a speaker of the people...&quot;
@@ -539,14 +557,14 @@ Today you don&#39;t have to work as it&#39;s a rest day, so it&#39;s time to beg
 ]</tw-passagedata><tw-passagedata pid="148" name="Prologue-3-7C" tags="Outside" position="1780,3685" size="100,100">(text-colour:grey)[???] &quot;Apologies, I wasn&#39;t yelling at you, I was yelling at that officer.&quot;
 [[Why? -&gt;Prologue-3-9G]]
 [[What&#39;s your name? -&gt;Prologue-3-9C]]
-[[Sure... -&gt;Prologue-3-9E]]</tw-passagedata><tw-passagedata pid="149" name="Prologue-3-9C" tags="" position="1990,3610" size="100,100">(text-colour:grey)[Eto] &quot;What is wrong with you? Why are you yelling at me if we&#39;ve just met?&quot;
-[[... -&gt;Prologue-3-8C]]</tw-passagedata><tw-passagedata pid="150" name="Prologue-3-9E" tags="" position="1990,3460" size="100,100">(text-colour:grey)[Eto] &quot;Sure... but I&#39;ve got a question: what is your name?&quot;
-[[... -&gt;Prologue-3-12D]]</tw-passagedata><tw-passagedata pid="151" name="Prologue-3-9G" tags="" position="1990,3760" size="100,100">(text-colour:grey)[Eto] &quot;Why? What have they done to you?&quot;
-[[... -&gt;Prologue-3-10G]]</tw-passagedata><tw-passagedata pid="152" name="Prologue-3-8C" tags="" position="2200,3460" size="100,100">You leave the area as you trust that he doesn&#39;t hold any hatred against you, but you also somewhat wonder: why would he yell at an officer?
+[[Sure... -&gt;Prologue-3-9E]]</tw-passagedata><tw-passagedata pid="149" name="Prologue-3-9C" tags="Outside" position="1990,3610" size="100,100">(text-colour:grey)[Eto] &quot;What is wrong with you? Why are you yelling at me if we&#39;ve just met?&quot;
+[[... -&gt;Prologue-3-8C]]</tw-passagedata><tw-passagedata pid="150" name="Prologue-3-9E" tags="Outside" position="1990,3460" size="100,100">(text-colour:grey)[Eto] &quot;Sure... but I&#39;ve got a question: what is your name?&quot;
+[[... -&gt;Prologue-3-12D]]</tw-passagedata><tw-passagedata pid="151" name="Prologue-3-9G" tags="Outside" position="1990,3760" size="100,100">(text-colour:grey)[Eto] &quot;Why? What have they done to you?&quot;
+[[... -&gt;Prologue-3-10G]]</tw-passagedata><tw-passagedata pid="152" name="Prologue-3-8C" tags="Outside" position="2200,3460" size="100,100">You leave the area as you trust that he doesn&#39;t hold any hatred against you, but you also somewhat wonder: why would he yell at an officer?
 [[... -&gt;Prologue-3-16TS]]</tw-passagedata><tw-passagedata pid="153" name="Prologue-3-15F" tags="" position="3450,3375" size="100,100">(text-colour:grey)[Tianshi] &quot;You are truly a hopeless individual...&quot;
 [[What? -&gt;Prologue-3-16TS]]</tw-passagedata><tw-passagedata pid="154" name="Prologue-3-15E" tags="" position="3460,3535" size="100,100">(text-colour:grey)[Eto] &quot;What does Amiya have to do with this?&quot;
-[[... -&gt;Prologue-3-16E]]</tw-passagedata><tw-passagedata pid="155" name="Prologue-3-10G" tags="" position="2200,3610" size="100,100">(text-colour:grey)[???] &quot;They... They took him away! He just wanted to reunite with a friend of his! Is that too much to ask for in this dying world, a comforting departure!?&quot;
-[[... -&gt;Prologue-3-11G]]</tw-passagedata><tw-passagedata pid="156" name="Prologue-3-11G" tags="" position="2410,3535" size="100,100">(text-colour:grey)[Eto] &quot;Okay, let&#39;s calm down for a second. Who even are you?&quot;
+[[... -&gt;Prologue-3-16E]]</tw-passagedata><tw-passagedata pid="155" name="Prologue-3-10G" tags="Outside" position="2200,3610" size="100,100">(text-colour:grey)[???] &quot;They... They took him away! He just wanted to reunite with a friend of his! Is that too much to ask for in this dying world, a comforting departure!?&quot;
+[[... -&gt;Prologue-3-11G]]</tw-passagedata><tw-passagedata pid="156" name="Prologue-3-11G" tags="Outside" position="2410,3535" size="100,100">(text-colour:grey)[Eto] &quot;Okay, let&#39;s calm down for a second. Who even are you?&quot;
 [[... -&gt;Prologue-3-12D]]</tw-passagedata><tw-passagedata pid="157" name="Prologue-3-15TS" tags="" position="3880,3460" size="100,100">You bid farewell to Tianshi as you remember you have things to do...
 [[... -&gt;Prologue-3-17]]</tw-passagedata><tw-passagedata pid="158" name="Prologue-3-16E" tags="" position="3670,3535" size="100,100">(text
 -colour:grey)[Tianshi] &quot;Well, Amiya is involved as she is truly a girl of the people, unlike Swire who deals with things from out of sight—and she doesn&#39;t like mentioning Reunion as she thinks sometimes we get too radical.&quot;
