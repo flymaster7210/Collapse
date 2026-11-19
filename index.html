@@ -69,12 +69,67 @@ tw-story[tags~="Prism-Outside"] {
 }
 tw-story[tags~="Preamble"] {
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
     url("Contract.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+/* Main fixed container at the bottom of the screen */
+.vn-dialogue-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  z-index: 100;
+}
+
+/* 1. Blue Nameplate Bar */
+.vn-namebox {
+  position: relative;
+  width: 320px;
+  height: 42px;
+  background-image: url('scenario-namebadge-mei.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: -4px;
+  z-index: 2;
+}
+
+/* 2. Stacked Grey Dialogue Box (Top to Bottom Layer Order) */
+.vn-textbox {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  
+  /* Stacked from top layer (3rd white overlay) to bottom layer (4th grey base) */
+  background-image: 
+    url('scenario-covereffects_0.png'),
+    url('backing-scenario.png'),
+    url('scenario-dropbacking.png');
+  background-size: 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  
+  /* Keeps text out of the dark top bar and slanted bottom-left corner */
+  padding: 48px 40px 25px 55px; 
+  box-sizing: border-box;
+  color: #1a1a1a;
+  font-size: 1.15em;
+  line-height: 1.5;
+  z-index: 1;
+}
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.bgMusic = new Audio("003. Timeline (Dawn).mp3");
 window.bgMusic.loop = true;
 
@@ -89,7 +144,7 @@ $(document).on(':passagedisplay', function() {
     window.bgMusic.currentTime = 0;
   }
 });
-</script><tw-tag name="Chapter" color="red"></tw-tag><tw-tag name="Prism-Outside" color="blue"></tw-tag><tw-tag name="Outside" color="orange"></tw-tag><tw-tag name="Introduction" color="purple"></tw-tag><tw-tag name="Prism-Touch" color="red"></tw-tag><tw-tag name="Preamble" color="yellow"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="100,175" size="100,100">(set: $ReachedOut to false)
+</script><tw-tag name="Chapter" color="red"></tw-tag><tw-tag name="Prism-Outside" color="blue"></tw-tag><tw-tag name="Outside" color="orange"></tw-tag><tw-tag name="Introduction" color="purple"></tw-tag><tw-tag name="Prism-Touch" color="red"></tw-tag><tw-tag name="Preamble" color="yellow"></tw-tag><tw-tag name="no-box" color="red"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="100,500" size="100,100">(set: $ReachedOut to false)
 (set: $TimesRefusedPrologue to 0)
 (set: $AllowEntryPromise to false)
 (set: $ReturnReason to &quot;&quot;)
@@ -98,12 +153,13 @@ $(document).on(':passagedisplay', function() {
 (set: $MetSwire to false)
 (set: $TouchedPrism to false)
 (set: $ExitReason to &quot;&quot;)
-(set: $Day3End to &quot;&quot;)</tw-passagedata><tw-passagedata pid="2" name="Start" tags="Preamble" position="100,325" size="100,100">(text-colour:grey)[Content Warning]
+(set: $Day3End to &quot;&quot;)
+(set: $speaker to &quot;&quot;)</tw-passagedata><tw-passagedata pid="2" name="Start" tags="Preamble no-box" position="100,325" size="100,100">(text-colour:grey)[Content Warning]
 
 This narrative contains themes related to mental health, psychological distress, isolation, and symbolic representations of the aforementioned topics. Certain elements throughout this story are intentionally ambiguous or open to subjective interpretation. Events, character interactions, and visual symbolism are designed to evoke reflection rather than present a singular definitive meaning. Player discretion is strongly advised, as some topics may be emotionally resonant or unsettling for certain individuals. If you are a minor or currently experiencing severe distress, consulting with a trusted mentor, counselor, or parent before continuing is strongly encouraged. Please proceed at your own discretion.
 
 (text-colour:grey)[Player discretion is advised...]
-[[I understand -&gt;NotSlop]]</tw-passagedata><tw-passagedata pid="3" name="NotSlop" tags="Preamble" position="310,250" size="100,100">&lt;audio autoplay loop style=&quot;display: none;&quot;&gt;
+[[I understand -&gt;NotSlop]]</tw-passagedata><tw-passagedata pid="3" name="NotSlop" tags="Preamble no-box" position="310,250" size="100,100">&lt;audio autoplay loop style=&quot;display: none;&quot;&gt;
   &lt;source src=&quot;003. Timeline (Dawn).mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -338,21 +394,25 @@ A Solitary Dream: Shattered Beyond Repair
 [[Start -&gt;Prologue-Day1-1]]</tw-passagedata><tw-passagedata pid="10" name="Prologue-Day1-1" tags="" position="310,1020" size="100,100">??th Day, ??th Month, Year ????
 ( Time has lost all meaning a long time ago...)
 The static hum of the atmosphere lingers in the air, cold and unchanging. Beyond the window, the sky remains a shade of dull, hollow grey.
-[[... -&gt;Prologue-1-2]]</tw-passagedata><tw-passagedata pid="11" name="Prologue-1-2" tags="" position="520,1020" size="100,100">(text-colour:grey)[???] &quot; ß{19ˆ$@€ (§ÑH£Ñhrè™Î¹+‡ ÷þþ¨žA8 ×áz?Ïy4]ªî:uÖ^a¯õ®w‰mÛ¶iÏó¸òÊ+yë[ß ï¹ç qôèÑ &lt;òÈ#ß³,« Á“€â¿qi% ¾õå ü‡½×\óóF&quot;
+[[... -&gt;Prologue-1-2]]</tw-passagedata><tw-passagedata pid="11" name="Prologue-1-2" tags="" position="520,1020" size="100,100">(set: $speaker to &quot;???&quot;)
+&quot; ß{19ˆ$@€ (§ÑH£Ñhrè™Î¹+‡ ÷þþ¨žA8 ×áz?Ïy4]ªî:uÖ^a¯õ®w‰mÛ¶iÏó¸òÊ+yë[ß ï¹ç qôèÑ &lt;òÈ#ß³,« Á“€â¿qi% ¾õå ü‡½×\óóF&quot;
 A voice breaks through the void, distorted and fragmenting like static cutting through a weak signal.
 [[What... did you.... say? -&gt;Prologue-1-3]]</tw-passagedata><tw-passagedata pid="12" name="Prologue-1-3" tags="" position="730,1020" size="100,100">(text-colour:grey)[???] &quot;Eto... The world... collapsed... F#¥DkE †(¥ ...is in... æ ëìèh àøñ... I&#39;m sorry... I didn&#39;t tell you... that I have been... J¥î¹ç¾ ¯™&gt;¿Î+€... but now... the time has come... the &#39;Prismatic Collision&#39;... claimed me...&quot;
 The figure before you trembles, their outline flickering as they slowly dissolve directly into wireframes.
 [[... -&gt;Prologue-1-4]]</tw-passagedata><tw-passagedata pid="13" name="Prologue-1-4" tags="" position="940,1020" size="100,100">(text-colour:grey)[???] &quot;I hope... we meet again in... ¥R‰JµŠa 8... It has been... a pleasure... but I&#39;ll wait... ±r3á §€ßü¦· H€ç¿þ‰—u ½ª ù... until... nSÐta“Àñ[ßð... Don&#39;t mourn my åjÏ÷YÎçi4...&quot;
 Their presence grows fainter with every passing heartbeat, slipping further into the fading light.
 [[Remain Silent -&gt;Prologue-1-5B]]
-[[Try to reach out -&gt;Prologue-1-5A]]</tw-passagedata><tw-passagedata pid="14" name="Prologue-1-5B" tags="" position="1150,945" size="100,100">(set:$ReachedOut to false)
+[[Try to reach out -&gt;Prologue-1-5A]]</tw-passagedata><tw-passagedata pid="14" name="Prologue-1-5B" tags="" position="1150,945" size="100,100">(set: $speaker to &quot;&quot;)
+(set:$ReachedOut to false)
 You choose to remain still, forcing yourself to suppress any reaction as you watch someone you once remembered fondly reach the end of the &quot;Prismatic Collapse&quot;. Uncertainty weighs heavily on you, you wonder if &#39;her&#39; parting promise will hold any truth, or if it is wise to trust the words of someone you may not see for a very long time...
-[[...-&gt;Prologue-1-7]]</tw-passagedata><tw-passagedata pid="15" name="Prologue-1-5A" tags="" position="1150,1095" size="100,100">(set:$ReachedOut to true)
+[[...-&gt;Prologue-1-7]]</tw-passagedata><tw-passagedata pid="15" name="Prologue-1-5A" tags="" position="1150,1095" size="100,100">(set: $speaker to &quot;&quot;)
+(set:$ReachedOut to true)
 You attempt to reach out toward the fading mirage, hoping to offer &#39;her&#39; a proper farewell. However, as your hand nearly brushes against hers, an icy chill pierces your palm. You instinctively recoil, pulling your arm back as if struck by a sudden physical shock. When you look up once more, the warmth is gone. Only a hollow wireframe silhouette remains in &#39;her&#39; place...
 [[...-&gt;Prologue-1-6A]]</tw-passagedata><tw-passagedata pid="16" name="Prologue-1-6A" tags="" position="1360,1020" size="100,100">Witnessing the empty shell before you, an unsettling doubt settles in. You wonder if you truly did enough for &#39;her&#39; to hold onto your memory as she transitions to &#39;that place&#39;, the mysterious destination spoken of by those undergoing &quot;Prismatic Collapse,&quot; a point of absolute non-return that you have never witnessed firsthand...
 [[...-&gt;Prologue-1-7]]</tw-passagedata><tw-passagedata pid="17" name="Prologue-1-7" tags="" position="1570,1020" size="100,100">Unfortunately, you have no time to dwell on the implications. Even though you are merely another ordinary civilian in this fragile settlement, daily duties still demand your attention. A reality sharply brought back to focus as a firm knock echoes at your door...
 [[Go to the door -&gt;Prologue-1-9A]]
-[[Don&#39;t Answer -&gt;Prologue-1-8B]]</tw-passagedata><tw-passagedata pid="18" name="Prologue-1-9A" tags="" position="1780,945" size="100,100">(text-colour:grey)[Eto] &quot;Who is it? I am aware that as a civilian, I need to perform my duties...&quot;
+[[Don&#39;t Answer -&gt;Prologue-1-8B]]</tw-passagedata><tw-passagedata pid="18" name="Prologue-1-9A" tags="" position="1780,945" size="100,100">(set: $speaker to &quot;Eto&quot;) 
+&quot;Who is it? I am aware that as a civilian, I need to perform my duties...&quot;
 [[...-&gt;Prologue-1-10A]]</tw-passagedata><tw-passagedata pid="19" name="Prologue-1-8B" tags="" position="1780,1095" size="100,100">(text-colour:grey)[Eto] &quot;Sorry, I&#39;m busy right now... I can&#39;t attend to you at the moment.&quot; You speak through the shut door, keeping your distance.
 [[...-&gt;Prologue-1-9B]]</tw-passagedata><tw-passagedata pid="20" name="Prologue-1-10A" tags="" position="1990,945" size="100,100">(text-colour:grey)[???] &quot;Eto?, why are you talking like that?, you usually only say that when something happened...&quot;
 [[... -&gt;Prologue-1-11A]]</tw-passagedata><tw-passagedata pid="21" name="Prologue-1-9B" tags="" position="1990,1095" size="100,100">(text-colour:grey)[???] &quot;Come on, Eto! You truly are the weirdest person I&#39;ve ever met,&quot; the voice sighs from the other side. &quot;Sometimes you&#39;re open and easy to talk to, and other times you act like you want to isolate yourself completely... almost as if you were collapsing yourself.&quot;
@@ -652,7 +712,17 @@ You wander aimlessly through the grey streets, wondering what lies ahead in Heth
 [[... -&gt;Prologue-4-5C]]</tw-passagedata><tw-passagedata pid="204" name="Prologue-4-5C" tags="Outside" position="900,4600" size="100,100">(text-colour:grey)[Tianshi]
 Oh, so now you are complaining, you should have explained it better!
 [[... -&gt;Prologue-4-6C]]</tw-passagedata><tw-passagedata pid="205" name="Prologue-4-6C" tags="Outside" position="1100,4600" size="100,100">(text-colour:grey)[Swire]
-Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata></tw-storydata>
+Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passagedata pid="206" name="Headers" tags="header" position="200,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
+  (if: $speaker is not &quot;&quot; and $speaker is not 0)[
+    &lt;div class=&quot;vn-dialogue-wrapper&quot;&gt;&lt;div class=&quot;vn-namebox&quot;&gt;$speaker&lt;/div&gt;&lt;div class=&quot;vn-textbox&quot;&gt;
+  ](else:)[
+    &lt;div class=&quot;vn-dialogue-wrapper&quot;&gt;&lt;div class=&quot;vn-textbox&quot;&gt;
+  ]
+]
+</tw-passagedata><tw-passagedata pid="207" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
+  &lt;/div&gt;&lt;/div&gt;
+]
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
