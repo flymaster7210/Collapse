@@ -714,9 +714,9 @@ You wander aimlessly through the grey streets, wondering what lies ahead in Heth
 Oh, so now you are complaining, you should have explained it better!
 [[... -&gt;Prologue-4-6C]]</tw-passagedata><tw-passagedata pid="205" name="Prologue-4-6C" tags="Outside" position="1100,4600" size="100,100">(text-colour:grey)[Swire]
 Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passagedata pid="206" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
-  (enchant: ?Passage, (box: &quot;X&quot;) + (css: &quot;position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 900px; min-height: 180px; z-index: 100; background-image: url(&#39;scenario-covereffects_0.png&#39;), url(&#39;backing-scenario.png&#39;), url(&#39;scenario-dropbacking.png&#39;); background-size: 100% 100%, 100% 100%, 100% 100%; background-repeat: no-repeat; padding: 48px 40px 25px 55px; box-sizing: border-box; color: #1a1a1a; font-size: 1.15em; line-height: 1.5;&quot;))
+  (enchant: ?Passage, (css: &quot;position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 900px; height: 200px; z-index: 100; background-image: url(&#39;scenario-covereffects_0.png&#39;), url(&#39;backing-scenario.png&#39;), url(&#39;scenario-dropbacking.png&#39;); background-size: 100% 100%, 100% 100%, 100% 100%; background-repeat: no-repeat; padding: 42px 40px 25px 55px; box-sizing: border-box; color: #f0f0f0; font-size: 1.1em; line-height: 1.45; overflow-y: auto;&quot;))
   (if: $speaker is not &quot;&quot; and $speaker is not 0)[
-    &lt;div class=&quot;vn-namebox&quot; style=&quot;position: fixed; bottom: 196px; left: calc(50% - 450px); z-index: 101;&quot;&gt;$speaker&lt;/div&gt;
+    &lt;div class=&quot;vn-namebox&quot; style=&quot;position: fixed; bottom: 216px; left: max(5%, calc(50% - 450px)); z-index: 101;&quot;&gt;$speaker&lt;/div&gt;
   ]
 ]
 </tw-passagedata></tw-storydata>
