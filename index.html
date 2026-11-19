@@ -130,6 +130,56 @@ tw-story[tags~="Preamble"] {
   z-index: 1;
 }
 
+/* Dialogue Box (applies to all passages except those tagged 'no-box') */
+tw-passage:not([tags~="no-box"]) {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  
+  /* Expands horizontally with text from 700px up to 94% of screen width */
+  width: max-content !important;
+  min-width: 700px !important;
+  max-width: 94vw !important;
+  min-height: 190px !important;
+  
+  background-image: 
+    url('scenario-covereffects_0.png'),
+    url('backing-scenario.png'),
+    url('scenario-dropbacking.png') !important;
+  background-size: 100% 100%, 100% 100%, 100% 100% !important;
+  background-repeat: no-repeat !important;
+  
+  padding: 40px 45px 25px 55px !important;
+  box-sizing: border-box !important;
+  color: #f0f0f0 !important;
+  font-size: 1.1em !important;
+  line-height: 1.45 !important;
+  z-index: 100 !important;
+}
+
+/* Blue Nameplate anchored just above the top-left of tw-passage */
+.vn-namebox {
+  position: absolute !important;
+  top: -38px !important;
+  left: 0px !important;
+  width: 320px !important;
+  height: 42px !important;
+  
+  background-image: url('scenario-namebadge-mei.png') !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 35px !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  font-size: 1.05em !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  z-index: 101 !important;
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">window.bgMusic = new Audio("003. Timeline (Dawn).mp3");
 window.bgMusic.loop = true;
 
@@ -391,11 +441,11 @@ Please, before you say anything, this isn&#39;t AI slop, this wasn&#39;t vibe co
 [[Continue -&gt;Prologue-Title]]</tw-passagedata><tw-passagedata pid="9" name="Prologue-Title" tags="Chapter" position="100,1020" size="100,100">(text-colour:grey)[Prologue]
 A Solitary Dream: Shattered Beyond Repair
 (text-colour:grey)[孤独な夢――修復不可能なほどに砕け散った]
-[[Start -&gt;Prologue-Day1-1]]</tw-passagedata><tw-passagedata pid="10" name="Prologue-Day1-1" tags="" position="310,1020" size="100,100">(set: $speaker to &quot;???&quot;)
+[[Start -&gt;Prologue-Day1-1]]</tw-passagedata><tw-passagedata pid="10" name="Prologue-Day1-1" tags="" position="310,1020" size="100,100">
 ??th Day, ??th Month, Year ????
 ( Time has lost all meaning a long time ago...)
 The static hum of the atmosphere lingers in the air, cold and unchanging. Beyond the window, the sky remains a shade of dull, hollow grey.
-[[... -&gt;Prologue-1-2]]</tw-passagedata><tw-passagedata pid="11" name="Prologue-1-2" tags="" position="520,1020" size="100,100">
+[[... -&gt;Prologue-1-2]]</tw-passagedata><tw-passagedata pid="11" name="Prologue-1-2" tags="" position="520,1020" size="100,100">(set: $speaker to &quot;???&quot;)
 &quot; ß{19ˆ$@€ (§ÑH£Ñhrè™Î¹+‡ ÷þþ¨žA8 ×áz?Ïy4]ªî:uÖ^a¯õ®w‰mÛ¶iÏó¸òÊ+yë[ß ï¹ç qôèÑ &lt;òÈ#ß³,« Á“€â¿qi% ¾õå ü‡½×\óóF&quot;
 A voice breaks through the void, distorted and fragmenting like static cutting through a weak signal.
 [[What... did you.... say? -&gt;Prologue-1-3]]</tw-passagedata><tw-passagedata pid="12" name="Prologue-1-3" tags="" position="725,1025" size="100,100"> &quot;Eto... The world... collapsed... F#¥DkE †(¥ ...is in... æ ëìèh àøñ... I&#39;m sorry... I didn&#39;t tell you... that I have been... J¥î¹ç¾ ¯™&gt;¿Î+€... but now... the time has come... the &#39;Prismatic Collision&#39;... claimed me...&quot;
@@ -708,15 +758,14 @@ You wander aimlessly through the grey streets, wondering what lies ahead in Heth
 [[Better let her be -&gt;Prologue-4-4D]]</tw-passagedata><tw-passagedata pid="198" name="Prologue-4-3B" tags="Outside" position="520,4455" size="100,100">You eventually find Amiya , but you feel somewhat hesitant to aproach her, given the situation with her collapse and that attempting to talk to her might cause issues
 [[Approach her -&gt;Prologue-4-4B]]
 [[Leave her be -&gt;Prologue-4-4D]]</tw-passagedata><tw-passagedata pid="199" name="Prologue-4-3C" tags="Outside" position="520,4605" size="100,100">You eventually come across what looks like Swire, arguing with what looks like Tianshi, you get a bit closer but feel skeptical of what you are hearing
-[[... -&gt;Prologue-4-4C]]</tw-passagedata><tw-passagedata pid="200" name="Prologue-4-4A" tags="Outside" position="700,4200" size="100,100">You go around what&#39;s left of the city, trying to find Nia to ask her about recent events to see if she knows something about the situation</tw-passagedata><tw-passagedata pid="201" name="Prologue-4-4D" tags="" position="700,4350" size="100,100">You decide it&#39;s better to let things play as they should, maybe ignorance might be better after all...</tw-passagedata><tw-passagedata pid="202" name="Prologue-4-4B" tags="" position="700,4500" size="100,100"></tw-passagedata><tw-passagedata pid="203" name="Prologue-4-4C" tags="Outside" position="700,4600" size="100,100">(text-colour:grey)[Swire]
+[[... -&gt;Prologue-4-4C]]</tw-passagedata><tw-passagedata pid="200" name="Prologue-4-4A" tags="Outside" position="700,4200" size="100,100">You go around what&#39;s left of the city, trying to find Nia to ask her about recent events to see if she knows something about the situation</tw-passagedata><tw-passagedata pid="201" name="Prologue-4-4D" tags="Outside" position="700,4350" size="100,100">You decide it&#39;s better to let things play as they should, maybe ignorance might be better after all...</tw-passagedata><tw-passagedata pid="202" name="Prologue-4-4B" tags="" position="700,4500" size="100,100"></tw-passagedata><tw-passagedata pid="203" name="Prologue-4-4C" tags="Outside" position="700,4600" size="100,100">(text-colour:grey)[Swire]
 ..., Tianshi!, what have you been saying about Reunion that people think we are endorsing voluntarily collapse!?
 [[... -&gt;Prologue-4-5C]]</tw-passagedata><tw-passagedata pid="204" name="Prologue-4-5C" tags="Outside" position="900,4600" size="100,100">(text-colour:grey)[Tianshi]
 Oh, so now you are complaining, you should have explained it better!
 [[... -&gt;Prologue-4-6C]]</tw-passagedata><tw-passagedata pid="205" name="Prologue-4-6C" tags="Outside" position="1100,4600" size="100,100">(text-colour:grey)[Swire]
 Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passagedata pid="206" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
-  (enchant: ?Passage, (css: &quot;position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 900px; height: 200px; z-index: 100; background-image: url(&#39;scenario-covereffects_0.png&#39;), url(&#39;backing-scenario.png&#39;), url(&#39;scenario-dropbacking.png&#39;); background-size: 100% 100%, 100% 100%, 100% 100%; background-repeat: no-repeat; padding: 42px 40px 25px 55px; box-sizing: border-box; color: #f0f0f0; font-size: 1.1em; line-height: 1.45; overflow-y: auto;&quot;))
   (if: $speaker is not &quot;&quot; and $speaker is not 0)[
-    &lt;div class=&quot;vn-namebox&quot; style=&quot;position: fixed; bottom: 216px; left: max(5%, calc(50% - 450px)); z-index: 101;&quot;&gt;$speaker&lt;/div&gt;
+    &lt;div class=&quot;vn-namebox&quot;&gt;$speaker&lt;/div&gt;
   ]
 ]
 </tw-passagedata></tw-storydata>
