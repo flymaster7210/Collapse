@@ -145,28 +145,14 @@ tw-passage tw-include tw-hook {
 .char-portrait {
   position: fixed;
   bottom: -68.8vh;
-  left: -30%;
+  left: -150%;
 ;
   height: 130vh;
   width: auto;
   pointer-events: none;
   z-index: -1;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.bgMusic = new Audio("003. Timeline (Dawn).mp3");
-window.bgMusic.loop = true;
-
-$(document).on(':passagedisplay', function() {
-  var tags = $('tw-story').attr('tags') || '';
-  if (tags.split(' ').includes('Preamble')) {
-    if (window.bgMusic.paused) {
-      window.bgMusic.play().catch(function() {});
-    }
-  } else {
-    window.bgMusic.pause();
-    window.bgMusic.currentTime = 0;
-  }
-});
-</script><tw-tag name="Chapter" color="red"></tw-tag><tw-tag name="Prism-Outside" color="blue"></tw-tag><tw-tag name="Outside" color="orange"></tw-tag><tw-tag name="Introduction" color="purple"></tw-tag><tw-tag name="Prism-Touch" color="red"></tw-tag><tw-tag name="Preamble" color="yellow"></tw-tag><tw-tag name="no-box" color="red"></tw-tag><tw-tag name="Inside" color="yellow"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="100,500" size="100,100">(set: $ReachedOut to false)
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Chapter" color="red"></tw-tag><tw-tag name="Prism-Outside" color="blue"></tw-tag><tw-tag name="Outside" color="orange"></tw-tag><tw-tag name="Introduction" color="purple"></tw-tag><tw-tag name="Prism-Touch" color="red"></tw-tag><tw-tag name="Preamble" color="yellow"></tw-tag><tw-tag name="no-box" color="red"></tw-tag><tw-tag name="Inside" color="yellow"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="100,500" size="100,100">(set: $ReachedOut to false)
 (set: $TimesRefusedPrologue to 0)
 (set: $AllowEntryPromise to false)
 (set: $ReturnReason to &quot;&quot;)
@@ -424,7 +410,7 @@ The static hum of the atmosphere lingers in the air, cold and unchanging. Beyond
 A voice breaks through the void, distorted and fragmenting like static cutting through a weak signal.
 [[What... did you.... say? -&gt;Prologue-1-3]]</tw-passagedata><tw-passagedata pid="12" name="Prologue-1-3" tags="Inside" position="725,1025" size="100,100">(set: $speaker to $her&#39;s name)
 (print: &#39;&lt;img src=&quot;&#39; + $her&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
-&quot;Eto... The world... collapsed... F#¥DkE †(¥ ...is in... æ ëìèh àøñ... I&#39;m sorry... I didn&#39;t tell you... that I have been... J¥î¹ç¾ ¯™&gt;¿Î+€... but now... the time has come... the &#39;Prismatic Collision&#39;... claimed me...&quot;
+&quot;Eto... The world... collapsed... F#¥DkE †(¥ ...is in... æ ëìèh àøñ... I&#39;m sorry... I didn&#39;t tell you... that I have been... J¥î¹ç¾ ¯™&gt;¿Î+€... but now... the time has come... the &lt;dfn&gt;Prismatic Collision&lt;/dfn&gt;... claimed me...&quot;
 The figure before you trembles, their outline flickering as they slowly dissolve directly into wireframes.
 [[... -&gt;Prologue-1-4]]</tw-passagedata><tw-passagedata pid="13" name="Prologue-1-4" tags="Inside" position="940,1020" size="100,100">(set: $speaker to $her&#39;s name)
 (print: &#39;&lt;img src=&quot;&#39; + $her&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
@@ -467,38 +453,46 @@ You attempt to reach out toward the fading mirage, hoping to offer &#39;her&#39;
 [[Politely Refuse her Entry -&gt;Prologue-1-15B]]</tw-passagedata><tw-passagedata pid="27" name="Prologue-1-11B" tags="Inside" position="2410,1095" size="100,100">(set: $speaker to &quot;Nia&quot;)&quot;Fine... but I hope you keep your word about letting me in tomorrow.&quot; Nia&#39;s tone softens slightly, underlying concern replacing her usual teasing edge.
 (set:$TimesRefusedPrologue to 1)
 [[Reassure her -&gt;Prologue-1-12C]]
-[[Ask her to drop the request -&gt;Prologue-1-12D]]</tw-passagedata><tw-passagedata pid="28" name="Prologue-1-12C" tags="" position="2620,1020" size="100,100">(print: &#39;&lt;img src=&quot;&#39; + $eto&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
+[[Ask her to drop the request -&gt;Prologue-1-12D]]</tw-passagedata><tw-passagedata pid="28" name="Prologue-1-12C" tags="Inside" position="2620,1020" size="100,100">(set: $speaker to $eto&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $eto&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
 &quot;Don&#39;t worry, Officer Cana, I will allow you to enter the next time we meet.&quot;
 (set:$AllowEntryPromise to true)
 (set:$ReturnReason to &quot;Promise&quot;)
-[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="29" name="Prologue-1-12D" tags="" position="2620,1170" size="100,100">(text-colour:grey)[Eto] &quot;Officer Cana, can we simply ignore this event? It would be the best for both of us as you get to skip the paperwork and I get to keep myself out of any investigation.&quot;
+[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="29" name="Prologue-1-12D" tags="Inside" position="2620,1170" size="100,100">(set: $speaker to $eto&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $eto&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
+&quot;Officer Cana, can we simply ignore this event? It would be the best for both of us as you get to skip the paperwork and I get to keep myself out of any investigation.&quot;
 [[... -&gt;Prologue-1-13D]]</tw-passagedata><tw-passagedata pid="30" name="Prologue-1-15A" tags="Inside" position="3040,795" size="100,100">(set: $speaker to &quot;&quot;)
 As you reluctantly open the door to let Nia in and allow her to carry out her duties, you can&#39;t help but wonder about her true intentions. Is her presence purely driven by her mandate as a service member, or did concern for a long-time friend lead her to your doorstep?
-[[... -&gt;Prologue-1-16A]]</tw-passagedata><tw-passagedata pid="31" name="Prologue-1-15B" tags="" position="3040,1245" size="100,100">You politely decline Nia&#39;s request for entry. Unaccustomed to being turned away while on duty, she visibly struggles to handle the rejection, caught between her official protocol and her personal ties to you.
+[[... -&gt;Prologue-1-16A]]</tw-passagedata><tw-passagedata pid="31" name="Prologue-1-15B" tags="Inside" position="3040,1245" size="100,100">(set: $speaker to &quot;&quot;)
+You politely decline Nia&#39;s request for entry. Unaccustomed to being turned away while on duty, she visibly struggles to handle the rejection, caught between her official protocol and her personal ties to you.
 [[... -&gt;Prologue-1-16B]]</tw-passagedata><tw-passagedata pid="32" name="Prologue-1-16A" tags="Inside" position="3250,945" size="100,100">Nia offers her genuine condolences once you explain what took place with the affected individual. She then proceeds to file a formal risk assessment for your quarters, gently but repeatedly asking you to step aside while she inspects the remaining wireframe husk.
 (set:$ReturnReason to &quot;Friendship&quot;)
-[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="33" name="Prologue-1-13D" tags="" position="2830,1095" size="100,100">(text-colour:grey)[Nia] &quot;Eto!, you can&#39;t just shut me off like that— I mean, &#39;It was incredibly impolite of you to refuse entry to a public officer during such pressing matters, the only logical deduction being that the individual, Name Eto, has some association with the subject.&#39;&quot;
+[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="33" name="Prologue-1-13D" tags="Inside" position="2830,1095" size="100,100">(set: $speaker to $nia&#39;s name)
+&quot;Eto!, you can&#39;t just shut me off like that— I mean, &#39;It was incredibly impolite of you to refuse entry to a public officer during such pressing matters, the only logical deduction being that the individual, Name Eto, has some association with the subject.&#39;&quot;
 [[Tell Nia the truth -&gt;Prologue-1-14D]]
 [[Try to deflect -&gt;Prologue-1-14E]]</tw-passagedata><tw-passagedata pid="34" name="Prologue-1-14D" tags="Inside" position="3040,945" size="100,100">(if: $ReachedOut is true)[(set: $speaker to &quot;&quot;)
 You tell Nia about your memories with that person, how you deeply remember your time together, and how you can&#39;t remember &#39;her&#39; name, and her last words, among other things. She expresses her condolences before returning to formalities and filing a risk assessment.]
 (else:)[(set: $speaker to &quot;&quot;)
 You tell Nia about your memories with that person, how you deeply remember your time together, and how you can&#39;t remember &#39;her&#39; name, and how you tried to not think about her final moments, among other things. She expresses her condolences before returning to formalities and filing a risk assessment.]
 (set:$ReturnReason to &quot;FurtherQuestioning&quot;)
-[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="35" name="Prologue-1-14E" tags="Inside" position="3040,1095" size="100,100">You tell Nia that you know nothing about the person. She is upset as she thinks it&#39;s probably a lie since the Prismatic Index nearby is elevated, and says she will come tomorrow to do a risk assessment.
+[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="35" name="Prologue-1-14E" tags="Inside" position="3050,1100" size="100,100">(set: $speaker to &quot;&quot;)
+You tell Nia that you know nothing about the person. She is upset as she thinks it&#39;s probably a lie since the Prismatic Index nearby is elevated, and says she will come tomorrow to do a risk assessment.
 (set:$ReturnReason to &quot;RiskAssessment&quot;)
-[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="36" name="Prologue-1-16B" tags="" position="3250,1095" size="100,100">(text-colour:grey)[Nia] &quot;Well then... Under Article 15F, Section 204 of the Code of Conduct for Civilians of Hetherau, I am going to exercise my right to remain outside your doorstep until you grant me access.&quot;
+[[... -&gt;Prologue-1-17A]]</tw-passagedata><tw-passagedata pid="36" name="Prologue-1-16B" tags="Inside" position="3250,1095" size="100,100">(set: $speaker to &quot;Nia&quot;) &quot;Well then... Under Article 15F, Section 204 of the Code of Conduct for Civilians of Hetherau, I am going to exercise my right to remain outside your doorstep until you grant me access.&quot;
 [[Sure... -&gt;Prologue-1-17B]]</tw-passagedata><tw-passagedata pid="37" name="Prologue-1-17A" tags="Inside" position="3460,945" size="100,100">Nia bids you farewell and begins her walk back toward the station. You stand in silence—relieved that you aren&#39;t under active investigation, yet knowing that as a member of the Monitoring Force, Nia will inevitably return tomorrow.
-[[... -&gt;Prologue-1-18AE]]</tw-passagedata><tw-passagedata pid="38" name="Prologue-1-17B" tags="" position="3460,1095" size="100,100">She doesn&#39;t walk away. Instead, you hear the quiet rustle of her uniform as she sits down directly outside your door, leaning her back firmly against the frame.
+[[... -&gt;Prologue-1-18AE]]</tw-passagedata><tw-passagedata pid="38" name="Prologue-1-17B" tags="Inside" position="3460,1095" size="100,100">She doesn&#39;t walk away. Instead, you hear the quiet rustle of her uniform as she sits down directly outside your door, leaning her back firmly against the frame.
 (set:$DaysWaitedPrologue to 1)
 [[Ask Nia if she is serious about this -&gt;Prologue-1-18B]]
 [[Leave her be -&gt;Prologue-1-18C]]</tw-passagedata><tw-passagedata pid="39" name="Prologue-1-18AE" tags="Inside" position="3880,1020" size="100,100">You continue with your daily duties until evening falls, paying little mind to those around you. In a world like this, their time will come—and eventually, so will yours...
-[[... -&gt;Prologue-1-19]]</tw-passagedata><tw-passagedata pid="40" name="Prologue-1-18B" tags="Inside" position="3670,945" size="100,100">(text-colour:grey)[Eto] &quot;Nia... Are you really doing this, sitting outside my door until I let you in? Is that what you are required to do by official protocol, or is it because of something else?&quot; You ask politely yet firmly, hoping she is simply teasing you or playing a role...
-[[... -&gt;Prologue-1-18AE]]</tw-passagedata><tw-passagedata pid="41" name="Prologue-1-18C" tags="" position="3670,1095" size="100,100">You decide to leave Nia seated outside. You refrain from asking her why she is choosing to do this, accepting her stance as her own decision...
+[[... -&gt;Prologue-1-19]]</tw-passagedata><tw-passagedata pid="40" name="Prologue-1-18B" tags="Inside" position="3670,945" size="100,100">(set: $speaker to $eto&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $eto&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;) 
+&quot;Nia... Are you really doing this, sitting outside my door until I let you in? Is that what you are required to do by official protocol, or is it because of something else?&quot; You ask politely yet firmly, hoping she is simply teasing you or playing a role...
+[[... -&gt;Prologue-1-18AE]]</tw-passagedata><tw-passagedata pid="41" name="Prologue-1-18C" tags="Inside" position="3670,1095" size="100,100">You decide to leave Nia seated outside. You refrain from asking her why she is choosing to do this, accepting her stance as her own decision...
 [[... -&gt;Prologue-1-18AE]]</tw-passagedata><tw-passagedata pid="42" name="Prologue-1-19" tags="Inside" position="4090,1020" size="100,100">As resting time arrives, you lie back and wonder if existence is truly as meaningless as people claim. Having completed your evening routine, you collapse onto your mattress and fall asleep, knowing tomorrow will likely bring more of the same...
-[[End day -&gt;Prologue-Day2-1]]</tw-passagedata><tw-passagedata pid="43" name="Prologue-Day2-1" tags="" position="100,2165" size="100,100">(if: (a: &quot;FurtherQuestioning&quot;, &quot;RiskAssessment&quot;, &quot;Promise&quot;) contains $ReturnReason)[??th Day, ??th Month, Year ???? ( Is it really a new day, or just her getting insistent enough? ) The air feels as stagnant as ever, offering no real change from the last time you were awake. [[... -&gt;Prologue-2-2A]]]
+[[End day -&gt;Prologue-Day2-1]]</tw-passagedata><tw-passagedata pid="43" name="Prologue-Day2-1" tags="Inside" position="100,2165" size="100,100">(if: (a: &quot;FurtherQuestioning&quot;, &quot;RiskAssessment&quot;, &quot;Promise&quot;) contains $ReturnReason)[??th Day, ??th Month, Year ???? ( Is it really a new day, or just her getting insistent enough? ) The air feels as stagnant as ever, offering no real change from the last time you were awake. [[... -&gt;Prologue-2-2A]]]
 (else-if: $ReturnReason is &quot;Friendship&quot;)[??th Day, ??th Month, Year ???? ( Is it really a new day, or just a mirage of the cycles from before? ) The air feels as stagnant as ever, offering no real change from the last time you were awake, but at least someone understands your struggle. [[... -&gt;Prologue-2-2B]]]
 (else-if: $DaysWaitedPrologue &gt; 0)[??th Day, ??th Month, Year ???? ( She is still outside, isn&#39;t she? ) The air feels as stagnant as ever, offering no real change from the last time you were awake—other than the knowledge that Nia remains right outside your door. [[... -&gt;Prologue-2-2C]]]
-(else:)[??th Day, ??th Month, Year ???? ( Another cycle begins... ) The air feels as stagnant as ever, offering no real change from the last time you were awake. [[... -&gt;Prologue-2-2B]]]</tw-passagedata><tw-passagedata pid="44" name="Prologue-2-2A" tags="" position="310,2015" size="100,100">(if: $ReturnReason is &quot;FurtherQuestioning&quot; or $ReturnReason is &quot;RiskAssessment&quot;)[
+(else:)[??th Day, ??th Month, Year ???? ( Another cycle begins... ) The air feels as stagnant as ever, offering no real change from the last time you were awake. [[... -&gt;Prologue-2-2B]]]</tw-passagedata><tw-passagedata pid="44" name="Prologue-2-2A" tags="Inside" position="310,2015" size="100,100">(if: $ReturnReason is &quot;FurtherQuestioning&quot; or $ReturnReason is &quot;RiskAssessment&quot;)[
 (text-colour:grey)[Nia] &quot;Civilian Eto, please grant entry to your residence so Officer Nia Cana may proceed with further questioning and conduct a formal risk assessment of the area.&quot;
 [[... -&gt;Prologue-2-3C]]
 ]
@@ -510,7 +504,7 @@ You tell Nia about your memories with that person, how you deeply remember your 
 (else:)[
 (text-colour:grey)[Nia] &quot;Civilian Eto, please grant entry to your residence.&quot;
 [[... -&gt;Prologue-2-3C]]
-]</tw-passagedata><tw-passagedata pid="45" name="Prologue-2-2B" tags="" position="310,2315" size="100,100">Nia returns looking visibly relieved and reassured. For a moment, her posture relaxes, standing before you not as Officer Cana, but as a long-time friend reaching out to offer support.
+]</tw-passagedata><tw-passagedata pid="45" name="Prologue-2-2B" tags="Inside" position="310,2315" size="100,100">Nia returns looking visibly relieved and reassured. For a moment, her posture relaxes, standing before you not as Officer Cana, but as a long-time friend reaching out to offer support.
 [[... -&gt;Prologue-2-3B]]</tw-passagedata><tw-passagedata pid="46" name="Prologue-2-3C" tags="" position="520,1790" size="100,100">You reluctantly let her in and answer all her questions, trying to keep personal preferences out and maintaining this interaction as a purely professional encounter...
 [[... -&gt;Prologue-2-4C]]</tw-passagedata><tw-passagedata pid="47" name="Prologue-2-3A" tags="" position="520,2090" size="100,100">She looks visibly relieved and pleased that you kept your promise, though she quickly smothers her warmth, retreating behind her usual, detached veneer, wrapped in layers of official protocol.
 [[... -&gt;Prologue-2-4A]]</tw-passagedata><tw-passagedata pid="48" name="Prologue-2-3D" tags="" position="520,2390" size="100,100">(set:$TimesRefusedPrologue to 2)
@@ -520,7 +514,7 @@ Nia looks visibly upset that you broke your promise, however she also looks like
 [[Continue to refuse -&gt;Prologue-2-4D]]</tw-passagedata><tw-passagedata pid="49" name="Prologue-2-4OE" tags="" position="730,2165" size="100,100">Nia comes in, somewhat annoyed as she says that wasn&#39;t amusing, even if her tone suggests otherwise. She carries out her routine duties and then sits down to talk.
 [[Sorry... -&gt;Prologue-2-5OE]]</tw-passagedata><tw-passagedata pid="50" name="Prologue-2-4D" tags="" position="730,2315" size="100,100">(text-colour:grey)[Eto] &quot;Officer Cana, I will not let you in...&quot;
 [[Reconsider -&gt;Prologue-2-5OE]]
-[[Continue Refusing -&gt;Prologue-2-5D]]</tw-passagedata><tw-passagedata pid="51" name="Prologue-2-2C" tags="" position="310,2165" size="100,100">It&#39;s been $DaysWaitedPrologue day(s) since she sat down at your doorstep. You wonder if she is truly serious about this, but it also just doesn&#39;t feel right to leave her out there...
+[[Continue Refusing -&gt;Prologue-2-5D]]</tw-passagedata><tw-passagedata pid="51" name="Prologue-2-2C" tags="Inside" position="310,2165" size="100,100">It&#39;s been $DaysWaitedPrologue day(s) since she sat down at your doorstep. You wonder if she is truly serious about this, but it also just doesn&#39;t feel right to leave her out there...
 [[Let her in -&gt;Prologue-2-3E]]
 [[Wait and go about your day -&gt;Prologue-2-3F]]</tw-passagedata><tw-passagedata pid="52" name="Prologue-2-4C" tags="" position="730,1715" size="100,100">Nia also tries keeping it as a professional encounter, yet sometimes her formalisms drop due to your longstanding friendship before she pulls herself back, almost as if being casual was a crime...
 [[... -&gt;Prologue-2-5C]]</tw-passagedata><tw-passagedata pid="53" name="Prologue-2-3B" tags="" position="520,2540" size="100,100">(text-colour:grey)[Nia] &quot;Eto! It&#39;s good to see you. I was going to ask—&quot; She catches herself, her shoulders stiffening as she quickly corrects her posture. &quot;I mean, &#39;I would like to formally inquire regarding your current state of mind.&#39;&quot;
@@ -608,14 +602,14 @@ Her voice glitches violently under the strain, digital noise tearing through her
 [[And... -&gt;Prologue-2-31C]]</tw-passagedata><tw-passagedata pid="109" name="Prologue-2-31C" tags="Outside" position="7240,2165" size="100,100">(text-colour:grey)[Swire] &quot;So the plan is straightforward: Amiya gets her message across, hopefully wins the election, and then we can all work together to change things...&quot;
 [[Sure... -&gt;Prologue-2-32C]]</tw-passagedata><tw-passagedata pid="110" name="Prologue-2-32C" tags="Outside" position="7450,2165" size="100,100">You tell Miss Swire that the idea sounds somewhat naive given the state of Hetherau. Before the conversation can drag on, you excuse yourself as it&#39;s already late, and you still need to rest for when you wake up tomorrow... assuming you do.
 [[... -&gt;Prologue-2-33C]]</tw-passagedata><tw-passagedata pid="111" name="Prologue-2-33C" tags="Outside" position="7660,2165" size="100,100">As you walk back home through the quiet streets, a small, quiet smile slips across your face. Swire&#39;s guarded, sharp demeanor reminded you remarkably of Nia, except Swire carries a lively, stubborn spark that Nia buried long ago under layers of protocol.
-[[... -&gt;Prologue-2-34]]</tw-passagedata><tw-passagedata pid="112" name="Prologue-2-34" tags="" position="7870,2165" size="100,100">(if: $DaysWaitedPrologue &lt; 2)[You walk back to your apartment, hoping you get no more interruptions as it&#39;s already late... [[End day -&gt;Prologue-Day3-1]]]
-(else:)[You walk back to your apartment, hoping you get no more interruptions as it&#39;s already late... [[End day? -&gt;Prologue-2-35B]]]</tw-passagedata><tw-passagedata pid="113" name="Prologue-2-35B" tags="" position="8080,2165" size="100,100">You almost fall asleep, but after a while, there is a knock at the door.
+[[... -&gt;Prologue-2-34]]</tw-passagedata><tw-passagedata pid="112" name="Prologue-2-34" tags="Inside" position="7870,2165" size="100,100">(if: $DaysWaitedPrologue &lt; 2)[You walk back to your apartment, hoping you get no more interruptions as it&#39;s already late... [[End day -&gt;Prologue-Day3-1]]]
+(else:)[You walk back to your apartment, hoping you get no more interruptions as it&#39;s already late... [[End day? -&gt;Prologue-2-35B]]]</tw-passagedata><tw-passagedata pid="113" name="Prologue-2-35B" tags="Inside" position="8080,2165" size="100,100">You almost fall asleep, but after a while, there is a knock at the door.
 [[Dismiss it -&gt;Prologue-2-36B]]
-[[Check who it is -&gt;Prologue-2-36C]]</tw-passagedata><tw-passagedata pid="114" name="Prologue-2-36B" tags="" position="8290,2090" size="100,100">You ignore the person outside and go back to bed, falling into a dreamless sleep...
-[[End Day -&gt;Prologue-Day3-1]]</tw-passagedata><tw-passagedata pid="115" name="Prologue-2-36C" tags="" position="8290,2240" size="100,100">You reluctantly go and check who could possibly be knocking at your door, until you remember that Nia sat down there &quot;until she is allowed entry.&quot;
+[[Check who it is -&gt;Prologue-2-36C]]</tw-passagedata><tw-passagedata pid="114" name="Prologue-2-36B" tags="Inside" position="8290,2090" size="100,100">You ignore the person outside and go back to bed, falling into a dreamless sleep...
+[[End Day -&gt;Prologue-Day3-1]]</tw-passagedata><tw-passagedata pid="115" name="Prologue-2-36C" tags="Inside" position="8290,2240" size="100,100">You reluctantly go and check who could possibly be knocking at your door, until you remember that Nia sat down there &quot;until she is allowed entry.&quot;
 [[Let her in -&gt;Prologue-2-37D]]
-[[Let her be -&gt;Prologue-2-37E]]</tw-passagedata><tw-passagedata pid="116" name="Prologue-2-37D" tags="" position="8500,2090" size="100,100">(text-colour:grey)[Eto] &quot;Nia, fine... you can come in...&quot;
-[[... -&gt;Prologue-2-38D]]</tw-passagedata><tw-passagedata pid="117" name="Prologue-2-37E" tags="" position="8500,2240" size="100,100">(text-colour:grey)[Eto] &quot;Nia, how many times do I have to tell you &#39;Not now&#39;?&quot;
+[[Let her be -&gt;Prologue-2-37E]]</tw-passagedata><tw-passagedata pid="116" name="Prologue-2-37D" tags="Inside" position="8500,2090" size="100,100">(text-colour:grey)[Eto] &quot;Nia, fine... you can come in...&quot;
+[[... -&gt;Prologue-2-38D]]</tw-passagedata><tw-passagedata pid="117" name="Prologue-2-37E" tags="Inside" position="8500,2240" size="100,100">(text-colour:grey)[Eto] &quot;Nia, how many times do I have to tell you &#39;Not now&#39;?&quot;
 [[... -&gt;Prologue-2-38E]]</tw-passagedata><tw-passagedata pid="118" name="Prologue-2-38D" tags="" position="8710,2090" size="100,100">(text-colour:grey)[Nia] &quot;Civilian Eto, your compliance is noted. Thank you for allowing me access.&quot; Nia says that, then quickly does her task to let you rest for the remainder of this time.
 [[End day -&gt;Prologue-Day3-1]]</tw-passagedata><tw-passagedata pid="119" name="Prologue-2-38E" tags="" position="8710,2240" size="100,100">(text-colour:grey)[Nia] &quot;Your lack of compliance has been noted.&quot;
 (set:$DaysWaitedPrologue to it + 0.5)
@@ -732,7 +726,7 @@ Today you don&#39;t have to work as it&#39;s a rest day, so it&#39;s time to beg
 [[...-&gt;Prologue-3-28]]</tw-passagedata><tw-passagedata pid="195" name="Day4-1" tags="" position="100,4455" size="100,100">??th Day, ??th Month, Year ????
 ( How long has it been since this began )
 You get up, with no particular objective other than simply continuing to live.
-[[Start Day -&gt;Prologue-4-2]]</tw-passagedata><tw-passagedata pid="196" name="Prologue-4-2" tags="" position="310,4455" size="100,100">(if: $Day3End is &quot;Nia&quot;)[
+[[Start Day -&gt;Prologue-4-2]]</tw-passagedata><tw-passagedata pid="196" name="Prologue-4-2" tags="Outside" position="310,4455" size="100,100">(if: $Day3End is &quot;Nia&quot;)[
 You wander aimlessly, wondering what led Nia to get inside, and whether it would really be worth talking to her.
 [[... -&gt;Prologue-4-3A]]
 ]
@@ -749,15 +743,22 @@ You wander aimlessly through the grey streets, wondering what lies ahead in Heth
 [[... -&gt;Prologue-4-3A]]
 ]</tw-passagedata><tw-passagedata pid="197" name="Prologue-4-3A" tags="Outside" position="520,4305" size="100,100">You keep considering it, constantly wondering whether it is worth it to try and talk to her
 [[Go look for Nia -&gt;Prologue-4-4A]]
-[[Better let her be -&gt;Prologue-4-4D]]</tw-passagedata><tw-passagedata pid="198" name="Prologue-4-3B" tags="Outside" position="520,4455" size="100,100">You eventually find Amiya , but you feel somewhat hesitant to aproach her, given the situation with her collapse and that attempting to talk to her might cause issues
+[[Better let her be -&gt;Prologue-4-4D]]</tw-passagedata><tw-passagedata pid="198" name="Prologue-4-3B" tags="Outside" position="525,4450" size="100,100">You eventually find Amiya , but you feel somewhat hesitant to aproach her, given the situation with her collapse and that attempting to talk to her might cause issues
 [[Approach her -&gt;Prologue-4-4B]]
 [[Leave her be -&gt;Prologue-4-4D]]</tw-passagedata><tw-passagedata pid="199" name="Prologue-4-3C" tags="Outside" position="520,4605" size="100,100">You eventually come across what looks like Swire, arguing with what looks like Tianshi, you get a bit closer but feel skeptical of what you are hearing
-[[... -&gt;Prologue-4-4C]]</tw-passagedata><tw-passagedata pid="200" name="Prologue-4-4A" tags="Outside" position="700,4200" size="100,100">You go around what&#39;s left of the city, trying to find Nia to ask her about recent events to see if she knows something about the situation</tw-passagedata><tw-passagedata pid="201" name="Prologue-4-4D" tags="Outside" position="700,4350" size="100,100">You decide it&#39;s better to let things play as they should, maybe ignorance might be better after all...</tw-passagedata><tw-passagedata pid="202" name="Prologue-4-4B" tags="" position="700,4500" size="100,100"></tw-passagedata><tw-passagedata pid="203" name="Prologue-4-4C" tags="Outside" position="700,4600" size="100,100">(text-colour:grey)[Swire]
+[[... -&gt;Prologue-4-4C]]</tw-passagedata><tw-passagedata pid="200" name="Prologue-4-4A" tags="Outside" position="700,4200" size="100,100">You go around what&#39;s left of the city, trying to find Nia to ask her about recent events to see if she knows something about the situation
+[[... -&gt;Prologue-4-5A]]</tw-passagedata><tw-passagedata pid="201" name="Prologue-4-4D" tags="Outside" position="700,4350" size="100,100">You decide it&#39;s better to let things play as they should, maybe ignorance might be better after all...
+[[... -&gt;Prologue-4-5D]]</tw-passagedata><tw-passagedata pid="202" name="Prologue-4-4B" tags="Outside" position="700,4500" size="100,100">You approach Amiya cautiously, careful not to agitate her due to her &lt;dfn&gt;Prismatic Collision&lt;/dfn&gt;
+[[... -&gt;Prologue-4-5B]]</tw-passagedata><tw-passagedata pid="203" name="Prologue-4-4C" tags="Outside" position="700,4600" size="100,100">(set: $speaker to $swire&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $swire&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
 ..., Tianshi!, what have you been saying about Reunion that people think we are endorsing voluntarily collapse!?
-[[... -&gt;Prologue-4-5C]]</tw-passagedata><tw-passagedata pid="204" name="Prologue-4-5C" tags="Outside" position="900,4600" size="100,100">(text-colour:grey)[Tianshi]
+[[... -&gt;Prologue-4-5C]]</tw-passagedata><tw-passagedata pid="204" name="Prologue-4-5C" tags="Outside" position="900,4600" size="100,100">(set: $speaker to $tianshi&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $tianshi&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
 Oh, so now you are complaining, you should have explained it better!
-[[... -&gt;Prologue-4-6C]]</tw-passagedata><tw-passagedata pid="205" name="Prologue-4-6C" tags="Outside" position="1100,4600" size="100,100">(text-colour:grey)[Swire]
-Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passagedata pid="206" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
+[[... -&gt;Prologue-4-6C]]</tw-passagedata><tw-passagedata pid="205" name="Prologue-4-6C" tags="Outside" position="1100,4600" size="100,100">(set: $speaker to $swire&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $swire&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
+Oh, Tianshi, if you had bothered asking what I meant, maybe you could have understood reunion
+[[... -&gt;Prologue-4-7C]]</tw-passagedata><tw-passagedata pid="206" name="Footers" tags="footer" position="300,500" size="100,100">(unless: (passage:)&#39;s tags contains &quot;no-box&quot;)[
   (if: $speaker is not &quot;&quot; and $speaker is not 0)[
     &lt;div class=&quot;vn-namebox&quot;&gt;$speaker&lt;/div&gt;
   ]
@@ -765,9 +766,12 @@ Oh, Tianshi, if you had bothered asking what I meant</tw-passagedata><tw-passage
 </tw-passagedata><tw-passagedata pid="207" name="Characters" tags="startup" position="200,500" size="100,100">(set: $nia to (datamap: &quot;name&quot;, &quot;Nia&quot;, &quot;neutral&quot;, &quot;Nia.png&quot;))
 (set: $eto to (datamap: &quot;name&quot;, &quot;Eto&quot;, &quot;neutral&quot;, &quot;Eto.png&quot;))
 (set: $her to (datamap: &quot;name&quot;, &quot;???&quot;, &quot;neutral&quot;, &quot;Akane.png&quot;))
-(set: $tianshi to (datamap: &quot;name&quot;, &quot;Tianshi&quot;, &quot;neutral&quot;, &quot;Tianshi.png&quot;))
+(set: $tianshi to (datamap: &quot;name&quot;, &quot;Tianshi&quot;, &quot;neutral&quot;, &quot;Tianshi.png&quot;, &quot;angry&quot;, &quot;Tianshi-Angry.png&quot;))
 (set: $amiya to (datamap: &quot;name&quot;, &quot;Amiya&quot;, &quot;neutral&quot;, &quot;Amiya.png&quot;))
-(set: $swire to (datamap: &quot;name&quot;, &quot;Swire&quot;, &quot;neutral&quot;, &quot;Swire.png&quot;))</tw-passagedata></tw-storydata>
+(set: $swire to (datamap: &quot;name&quot;, &quot;Swire&quot;, &quot;neutral&quot;, &quot;Swire.png&quot;,&quot;angry&quot;, &quot;Swire-Angry.png&quot;))</tw-passagedata><tw-passagedata pid="208" name="Prologue-4-7C" tags="" position="1300,4600" size="100,100"></tw-passagedata><tw-passagedata pid="209" name="Prologue-4-5D" tags="" position="900,4350" size="100,100"></tw-passagedata><tw-passagedata pid="210" name="Prologue-4-5B" tags="Outside" position="900,4500" size="100,100">(set: $speaker to $eto&#39;s name)
+(print: &#39;&lt;img src=&quot;&#39; + $eto&#39;s neutral + &#39;&quot; class=&quot;char-portrait&quot;&gt;&#39;)
+&quot;Amiya, I would like to ask you some questions, may I?&quot;
+[[... -&gt;Prologue-4-6B]]</tw-passagedata><tw-passagedata pid="211" name="Prologue-4-5A" tags="" position="900,4200" size="100,100"></tw-passagedata><tw-passagedata pid="212" name="Prologue-4-6B" tags="" position="1100,4500" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
